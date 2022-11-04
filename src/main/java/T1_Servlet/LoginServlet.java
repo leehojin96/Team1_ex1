@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/tourlogin")
+@WebServlet("/tourLogin")
 public class LoginServlet extends HttpServlet{
 
 	@Override
@@ -21,9 +21,9 @@ public class LoginServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int login_correct =  0;  // 0  1  2
-		if(login_correct == 0 )
+		if(login_correct == 0 ) {
 			request.getRequestDispatcher("/mainIndex.html").forward(request, response);
-		else if( login_correct == 1) {
+		}else if( login_correct == 1) {
 			request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
 		}
 		
