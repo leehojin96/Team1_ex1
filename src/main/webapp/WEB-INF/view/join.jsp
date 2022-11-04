@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +9,7 @@
 <body>
 
 <header>
-<h2>AcornTour</h2>
+<h2>AcornTourJoin</h2>
 </header>
 
 <nav>
@@ -19,6 +21,14 @@
 </nav>
 
 <section>
+
+<form action="tourjoin" method="post">
+
+<input type="text" >
+<button>가입하기</button>
+
+</form>
+
 </section>
 
 <footer>
