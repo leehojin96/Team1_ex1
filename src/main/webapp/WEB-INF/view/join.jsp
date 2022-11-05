@@ -14,15 +14,15 @@
 
 <nav>
 <a href="/Team1_ex1/mainIndex.html">홈페이지</a>
-<a href="tourjoin">회원가입</a>
-<a href="tourlogin">로그인</a>
-<a href="/Team1_ex1/view/mypage.jsp">마이페이지</a>
-<a href="/Team1_ex1/view/res.jsp">예약확인</a>
+<a href="tourJoin">회원가입</a>
+<a href="tourLogin">로그인</a>
+<a href="tourMypage">마이페이지</a>
+<a href="tourRes">예약확인</a>
 </nav>
 
 <section>
 
-<form action="tourjoin" method="post">
+<form action="tourJoin" method="post">
 
 <input type="text" >
 <button>가입하기</button>
