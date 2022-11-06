@@ -20,6 +20,11 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		request.setCharacterEncoding("UTF-8");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		
 		int login_correct = 0 ;  // 0  1  2
 		if(login_correct == 0 ) {
 			request.getRequestDispatcher("/sucLoginMain.html").forward(request, response);

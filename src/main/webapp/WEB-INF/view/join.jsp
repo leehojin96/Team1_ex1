@@ -29,7 +29,7 @@
 <tr><td>휴대폰번호</td><td><input type="text" name = "phone"></td></tr>
 <tr><td>주민번호</td><td><input type="text" name = "birth"></td></tr>
 <tr><td>성별</td><td><input type="radio" name = "gender" value="남">남 <input type="radio" name = "gender">여</td></tr>
-<tr><td colspan="2"><button type="submit">가입하기</button></td></tr>
+<tr><td colspan="2"><button type="submit" >가입하기</button></td></tr>
 
 </table>
 </form>

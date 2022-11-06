@@ -56,7 +56,9 @@ public class CusDao {
 		}
 	}
 	
-	
+	public void login() {
+		
+	}
 	
 	
 	
