@@ -18,7 +18,6 @@ public class JoinServlet extends HttpServlet{
 	}
 	
 	@Override
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// 넘어온 데이터 가져오기
@@ -26,7 +25,7 @@ public class JoinServlet extends HttpServlet{
 		
 		String id = "DB에서 가져올 ID";
 		request.setAttribute("id", id); // id 심기
-		request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response); // 로그인 페이지로  forword
+		request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response); // 로그인 페이지로 forword
 		
 	}
 }
