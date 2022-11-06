@@ -27,8 +27,8 @@
 
 <form action="tourLogin" method="post">
 <table>
-<tr><td><input type="text" name="id" palceholder = "아이디"></td></tr>
-<tr><td><input type="text" name="pw palceholder = "비밀번호"></td></tr>
+<tr><td><input type="text" name="id" placeholder="아이디" ></td></tr>
+<tr><td><input type="text" name="pw" placeholder="비밀번호" ></td></tr>
 </table>
 <button type="submit">로그인하기</button>
 

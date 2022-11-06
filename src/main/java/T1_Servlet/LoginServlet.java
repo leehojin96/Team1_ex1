@@ -20,12 +20,11 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int login_correct =  0;  // 0  1  2
+		int login_correct = 0 ;  // 0  1  2
 		if(login_correct == 0 ) {
-			request.getRequestDispatcher("/mainIndex.html").forward(request, response);
+			request.getRequestDispatcher("/sucLoginMain.html").forward(request, response);
 		}else if( login_correct == 1) {
 			request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
 		}
-		
 	}
 }
