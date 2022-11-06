@@ -3,10 +3,7 @@ package T1_Dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-// <<<<<<< HEAD
 import java.sql.ResultSet;
-// =======
-// >>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
 import java.sql.SQLException;
 
 public class CusDao {
@@ -45,9 +42,7 @@ public class CusDao {
 		}
 		
 	}
-	
-// <<<<<<< HEAD
-// =======
+
 	// 회원가입
 	public void insert(Customer customer) {
 		dbCon();
@@ -74,7 +69,4 @@ public class CusDao {
 		}
 	}
 }
-	
-
-// >>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
 
