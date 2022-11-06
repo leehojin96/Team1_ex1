@@ -11,11 +11,9 @@
 <header>
 <h2>AcornTourReservation</h2>
 </header>
-
+<!-- 로그인 후 메뉴 -->
 <nav>
 <a href="/Team1_ex1/mainIndex.html">홈페이지</a>
-<a href="tourJoin">회원가입</a>
-<a href="tourLogin">로그인</a>
 <a href="tourMypage">마이페이지</a>
 <a href="tourRes">예약확인</a>
 </nav>
