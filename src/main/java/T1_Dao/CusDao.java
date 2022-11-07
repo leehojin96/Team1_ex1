@@ -29,7 +29,7 @@ public class CusDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.print("연결 성공");
+		System.out.print("연결성공");
 		
 		String sql = "select * from cus_info";
 		PreparedStatement pst;
@@ -57,16 +57,45 @@ public class CusDao {
 			pst.setString(5, customer.getBirth());
 			pst.setString(6, customer.getGender());
 			pst.setInt(7, 0);
-			pst.executeQuery();
+			pst.executeUpdate();
 			
 			pst.close();
 			con.close();
 			
-			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+	
+	public int loginCheck(String Id, String Pw) {
+		dbCon();
+	    String sql = "select Pw from Cus_info where Id = ? ";
+	    try {
+	        PreparedStatement pst = con.prepareStatement(sql);
+	        pst.setString(1, Id);
+	        ResultSet rs = pst.executeQuery();
+	        if(rs.next()) {
+	            if(rs.getString("Pw").equals(Pw)) {
+	               return 1;
+	            }else {
+	               return 0;
+	            }
+	         }
+	        return -1;
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }
+	      return 2;
+	 }
+	
+	public static void main(String[] args) {
+		
+		CusDao dao  = new CusDao();
+		
+		int result  = dao.loginCheck("bin7143@naver.com", "1q2w3e4r");
+		System.out.println(result + "정상작동");
+		
+	}
+	
+		
 }
-

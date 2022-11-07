@@ -18,5 +18,9 @@ public class CusService {
 	public void insert(Customer customer) {
 		dao.insert(customer);
 	}
-
+		   
+	public int checkLogin(String id, String pw) {
+	   int result = dao.loginCheck(id, pw);
+	   return result;
+	}
 }

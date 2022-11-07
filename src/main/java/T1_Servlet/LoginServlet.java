@@ -1,12 +1,16 @@
 package T1_Servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import T1_Dao.CusDao;
+import T1_Service.CusService;
 
 @WebServlet("/tourLogin")
 public class LoginServlet extends HttpServlet{
@@ -19,13 +23,34 @@ public class LoginServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=utf-8");
 		
-		int login_correct =  0;  // 0  1  2
-		if(login_correct == 0 ) {
-			request.getRequestDispatcher("/mainIndex.html").forward(request, response);
-		}else if( login_correct == 1) {
-			request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
-		}
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
 		
+		System.out.println(id);
+		System.out.println(pw);
+		
+		
+		CusDao cusdao = new CusDao();
+		CusService service = new CusService(cusdao);
+		int result = service.checkLogin(id, pw);
+		
+		System.out.println(result);
+		
+		if(result == 1 ){
+            request.getRequestDispatcher("/sucLoginMain.html").forward(request, response);
+         } else if (result == 0){
+            PrintWriter script = response.getWriter();
+            script.println("<script>alert('비밀번호가 틀립니다.'); history.back(); </script>");
+         } else if (result == -1){
+            PrintWriter script = response.getWriter();
+            script.println("<script>alert('존재하지 않는 아이디입니다.'); history.back(); </script>");
+         } else if (result == 2){
+            PrintWriter script = response.getWriter();
+            script.println("<script>alert('DB 오류'); history.back(); </script>");
+         }
 	}
 }
