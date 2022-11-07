@@ -50,5 +50,7 @@ public class JoinServlet extends HttpServlet{
 		// 회원 insert
 		cusservice.insert(customer);
 		
+		request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
+		
 	}
 }

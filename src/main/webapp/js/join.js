@@ -1,8 +1,8 @@
 function join(){
 	// alert("가입이 완료되었습니다.");
-	let joinfrm = document.joinfrm;
+	let frm = document.joinfrm;
 	let name = frm.name;
-	let id = frm.age;
+	let id = frm.id;
 	let pw = frm.pw;
 	let pwcheck = frm.pwcheck;
 	let phone = frm.phone;
@@ -18,6 +18,9 @@ function join(){
 	}else if(pw.value==""){
 		alert("비밀번호를 입력해주세요.");
 		pw.focus();
+	}else if(pwcheck.value==""){
+		alert("비밀번호를 확인해주세요.");
+		pwcheck.focus();
 	}else if(pwcheck.value != pw.value){
 		alert("비밀번호가 일치하지 않습니다.");
 		pwcheck.focus();

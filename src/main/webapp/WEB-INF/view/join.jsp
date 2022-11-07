@@ -6,47 +6,10 @@
 <meta charset="UTF-8">
 <title>main</title>
 
-<script>
+<%String path = request.getContextPath();%>
+<link rel="styLesheet" href="<%=path%>/css/index.css">
 
-function join(){
-	// alert("가입이 완료되었습니다.");
-	let joinfrm = document.joinfrm;
-	let name = frm.name;
-	let id = frm.age;
-	let pw = frm.pw;
-	let pwcheck = frm.pwcheck;
-	let phone = frm.phone;
-	let birth = frm.birth;
-	let gender = frm.gender;
-	
-	if(name.value==""){
-		alert("이름을 입력해주세요");
-		name.focus();
-	}else if(id.value==""){
-		alert("아이디를 입력해주세요.");
-		id.focus();
-	}else if(pw.value==""){
-		alert("비밀번호를 입력해주세요.");
-		pw.focus();
-	}else if(pwcheck.value != pw.value){
-		alert("비밀번호가 일치하지 않습니다.");
-		pwcheck.focus();
-	}else if(phone.value==""){
-		alert("전화번호를 입력해주세요.");
-		phone.focus();
-	}else if(birth.value==""){
-		alert("주민등록번호를 입력해주세요.");
-		birth.focus();
-	}else if(gender.value==""){
-		alert("성별을 선택해주세요.");
-		gender.focus();
-	}else{
-		frm.submit();
-		alert("가입이 완료되었습니다.");
-	}
-}
-
-</script>
+<script src="<%=path %>/js/join.js"></script>
 
 </head>
 <body>
@@ -72,12 +35,12 @@ function join(){
 <tr><td>휴대폰번호</td><td><input type="text" name = "phone"></td></tr>
 	<tr>
 		<td>주민번호</td>
-		<td><input type="text" name = "birth" placeholder="ex) 123456-1234567"></td>
+		<td><input type="text" name = "birth" placeholder="ex) 990101-1234567"></td>
 	</tr>
 <tr><td>성별</td><td><input type="radio" name = "gender" value="남">남<input type="radio" name = "gender">여</td></tr>
 <tr colspan="2">
 <td>
-<button onclick="join()">가입하기</button>
+<button type="button" onclick="join()">가입하기</button>
 </td>
 <td>
 <button type="button" onclick="location.href='mainIndex.html'">가입취소</button>
