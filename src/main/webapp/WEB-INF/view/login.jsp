@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>main</title>
+
+<%String path = request.getContextPath();%>
+<script src="<%=path %>/js/login.js"></script>
+
+
 </head>
 <body>
 
@@ -25,12 +30,20 @@
 
 <section>
 
-<form action="tourLogin" method="post">
+<form name="loginfrm" action="tourLogin" method="post">
 <table>
 <tr><td><input type="text" name="id" palceholder = "아이디"></td></tr>
-<tr><td><input type="text" name="pw palceholder = "비밀번호"></td></tr>
+<tr><td><input type="text" name="pw" palceholder = "비밀번호"></td></tr>
+<tr colspan="2">
+<td>
+<button type="button" onclick="login()">로그인</button>
+</td>
+<td>
+<button type="button" onclick="location.href='mainIndex.html'">메인화면</button>
+</td>
+</tr>
 </table>
-<button type="submit">로그인하기</button>
+
 
 </form>
 

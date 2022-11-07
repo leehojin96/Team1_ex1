@@ -13,7 +13,7 @@
 </header>
 <!-- 로그인 후 메뉴 -->
 <nav>
-<a href="/Team1_ex1/mainIndex.html">홈페이지</a>
+<a href="/Team1_ex1/sucLoginMaim.html">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
 <a href="tourRes">예약확인</a>
 </nav>
