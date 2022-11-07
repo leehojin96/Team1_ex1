@@ -37,7 +37,6 @@ public class CusDao {
 			pst = con.prepareStatement(sql);
 			ResultSet rs = pst.executeQuery();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -88,14 +87,13 @@ public class CusDao {
 	      return 2;
 	 }
 	
+	// 테스트용 메인입니다.
 	public static void main(String[] args) {
 		
 		CusDao dao  = new CusDao();
-		
 		int result  = dao.loginCheck("bin7143@naver.com", "1q2w3e4r");
 		System.out.println(result + "정상작동");
 		
 	}
 	
-		
 }

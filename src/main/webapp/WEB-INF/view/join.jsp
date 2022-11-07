@@ -29,7 +29,7 @@
 <tr><td>이름</td><td><input type="text" name = "name"></td></tr>
 <tr><td>아이디</td><td><input type="text" name = "id" placeholder="ex) 1234@naver.com"></td></tr>
 <tr><td>비밀번호</td><td><input type="password" name = "pw"></td></tr>
-<tr><td>비밀번호확인</td><td><input type="text" name = "pwcheck"></td></tr>
+<tr><td>비밀번호확인</td><td><input type="password" name = "pwcheck"></td></tr>
 <tr><td>휴대폰번호</td><td><input type="text" name = "phone" placeholder="ex) 010-1234-5678"></td></tr>
 	<tr>
 		<td>주민번호</td>

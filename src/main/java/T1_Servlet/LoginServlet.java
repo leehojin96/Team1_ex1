@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet{
             script.println("<script>alert('비밀번호가 틀립니다.'); history.back(); </script>");
          } else if (result == -1){
             PrintWriter script = response.getWriter();
-            script.println("<script>alert('존재하지 않는 아이디입니다.'); history.back(); </script>");
+            script.println("<script>alert('등록되지 않은 아이디입니다.'); history.back(); </script>");
          } else if (result == 2){
             PrintWriter script = response.getWriter();
             script.println("<script>alert('DB 오류'); history.back(); </script>");
