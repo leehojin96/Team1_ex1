@@ -30,7 +30,7 @@ public class MypageServlet extends HttpServlet{
 		if(id != null) {
 			PayDao dao = new PayDao();
 			PayService payservice = new PayService(dao);
-			ArrayList<Pay> list = payservice.paylist();
+			ArrayList<Pay> list = payservice.cus_paylist(id);
 			
 			//회원정보
 			CusDao cusdao = new CusDao();

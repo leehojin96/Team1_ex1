@@ -35,14 +35,15 @@ public class PayDao {
 		
 	}
 
-	public ArrayList<Pay> paylist(){
+	public ArrayList<Pay> cus_paylist(String loginid){
 		
 		ArrayList<Pay> list = new ArrayList<>();
 		dbCon();
-		String sql = "select * from pay_info";
+		String sql = "select * from pay_info where Id = ?";
 		try {
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(sql);
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, loginid);
+			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next()) {
 				String pay_code = rs.getString(1);
@@ -56,7 +57,7 @@ public class PayDao {
 			}
 			
 			rs.close();
-			st.close();
+			pst.close();
 			con.close();
 			
 		} catch (SQLException e) {

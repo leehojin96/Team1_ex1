@@ -14,9 +14,9 @@ public class PayService {
 	public PayService(PayDao dao) {
 		this.dao = dao;
 	}
-	public ArrayList<Pay> paylist() {
+	public ArrayList<Pay> cus_paylist(String loginid) {
 		ArrayList<Pay> list = new ArrayList<>();  
-		list = this.dao.paylist();
+		list = this.dao.cus_paylist(loginid);
 		return list;
 	}
 	
