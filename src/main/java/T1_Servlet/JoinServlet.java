@@ -39,7 +39,7 @@ public class JoinServlet extends HttpServlet{
 		String gender = request.getParameter("gender");
 		
 		//회원 객체 생성
-		Customer customer = new Customer(name, id, pw, phone, birth, gender, '0');
+		Customer customer = new Customer(name, id, pw, phone, birth, gender, 0);
 		
 		// 회원 dao 생성
 		CusDao cusdao = new CusDao();
@@ -49,6 +49,9 @@ public class JoinServlet extends HttpServlet{
 		
 		// 회원 insert
 		cusservice.insert(customer);
+		 
+		response.sendRedirect("tourLogin");
+		
 		
 		request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
 		

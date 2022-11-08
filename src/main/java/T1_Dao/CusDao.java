@@ -41,7 +41,11 @@ public class CusDao {
 		}
 		
 	}
+<<<<<<< HEAD
+	
+=======
 
+>>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
 	// 회원가입
 	public void insert(Customer customer) {
 		dbCon();
@@ -65,7 +69,25 @@ public class CusDao {
 			e.printStackTrace();
 		}
 	}
+<<<<<<< HEAD
 	
+	public void login() {
+		dbCon();
+		String sql = "select pw where id = ?";
+		
+	}
+	
+	
+	
+	
+}
+=======
+>>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
+	
+<<<<<<< HEAD
+
+
+=======
 	public int loginCheck(String Id, String Pw) {
 		dbCon();
 	    String sql = "select Pw from Cus_info where Id = ? ";
@@ -97,3 +119,4 @@ public class CusDao {
 	}
 	
 }
+>>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
