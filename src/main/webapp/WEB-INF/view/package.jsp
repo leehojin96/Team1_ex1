@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="T1_Dao.Pay" %>
+<%@ page import="T1_Dao.Package" %>
 
 <%
 String path = request.getContextPath();
@@ -19,7 +19,7 @@ String path = request.getContextPath();
     String id = (String)session.getAttribute("id");
     %>
 <header>
-<h2>AcornTourMypage</h2>
+<h2>AcornTourPackageInfo</h2>
 </header>
 
 <nav>
@@ -38,26 +38,31 @@ String path = request.getContextPath();
 <section>
 
 <table>
-<caption>결제내역</caption>
+<caption>패키지 정보</caption>
 <tr>
-<td>결제코드</td>
-<td>아이디(이메일)</td>
-<td>패키지번호</td>
-<td>결제금액</td>
-<td>인원</td>
-<td>상세내역페이지</td>
+<td>패키지 번호</td>
+<td>패키지 이름</td>
+<td>일정</td>
+<td>출국항공편</td>
+<td>입국항공편</td>
+<td>가격</td>
+<td>여행지</td>
+<td>호텔정보</td>
 </tr>
+
 <%
-ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
-	for(Pay res : list){
+ArrayList<Package> list = (ArrayList<Package>)request.getAttribute("list");
+	for(Package res : list){
 %>
 <tr>
-<td> <%= res.getPay_code()%></td>
-<td> <%= res.getId() %></td>
-<td> <a href="tourPackageInfo"><%= res.getPk_num() %></a></td>
+<td> <%= res.getPk_num() %></td>
+<td> <%= res.getPk_name()%></td>
+<td> <%= res.getSchedule() %></td>
+<td> <%= res.getDeparture() %></td>
+<td> <%= res.getDestination() %></td>
 <td> <%= res.getPrice() %></td>
-<td> <%= res.getPersons() %></td>
-<td><a href="tourRes">예약 상세</a></td>
+<td> <%= res.getTrv_place() %></td>
+<td> <%= res.getHt_key()%></td>
 </tr>
 <% } %>
 
