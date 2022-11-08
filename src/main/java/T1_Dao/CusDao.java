@@ -66,11 +66,6 @@ public class CusDao {
 		}
 	}
 
-	public void login() {
-		dbCon();
-		String sql = "select pw where id = ?";
-		
-	}
 	
 	public int loginCheck(String Id, String Pw) {
 		dbCon();
@@ -92,6 +87,39 @@ public class CusDao {
 	      }
 	      return 2;
 	 }
+	
+//	String loginid 넣어 모든 칼럼 값 불러오기
+	public Customer cus_info_all_whereid(String loginid) {
+		Customer customer = null;
+		dbCon();
+		String sql = "select * from cus_info where Id=?";
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, loginid);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+			String name = rs.getString(1);
+			String id = rs.getString(2);
+			String pw = rs.getString(3);
+			String phone = rs.getString(4);
+			String birth = rs.getString(5);
+			String gender = rs.getString(6);
+			int mileage = rs.getInt(7);
+			customer = new Customer(name, id, pw, phone, birth, gender, mileage);
+			}
+			rs.close();
+			pst.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return customer;
+		
+		
+		
+		
+	}
 	
 	// 테스트용 메인입니다.
 	public static void main(String[] args) {

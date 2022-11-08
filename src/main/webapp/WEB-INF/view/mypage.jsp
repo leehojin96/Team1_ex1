@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="T1_Dao.Pay" %>
-
+<%@ page import="T1_Dao.Customer" %>
 <%
 String path = request.getContextPath();
 %>
@@ -36,7 +36,30 @@ String path = request.getContextPath();
 </nav>
 
 <section>
+<table>
+<caption>회원 정보</caption>
+<tr>
+<td>이름</td>
+<td>아이디(이메일)</td>
+<td>비밀번호</td>
+<td>휴대폰번호</td>
+<td>주민등록번호</td>
+<td>성별</td>
+<td>마일리지</td>
+</tr>
+<% Customer customer = (Customer) request.getAttribute("customer"); 
+%>
+<tr>
+<td><%=customer.getName() %></td>
+<td><%=customer.getId() %></td>
+<td><%=customer.getPw() %></td>
+<td><%=customer.getPhone() %></td>
+<td><%=customer.getBirth() %></td>
+<td><%=customer.getGender() %></td>
+<td><%=customer.getMileage() %></td>
+</tr>
 
+</table>
 <table>
 <caption>결제내역</caption>
 <tr>
