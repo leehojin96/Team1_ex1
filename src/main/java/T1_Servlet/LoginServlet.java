@@ -26,26 +26,12 @@ public class LoginServlet extends HttpServlet{
 		response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
-		
-<<<<<<< HEAD
-		request.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		
-		
-		int login_correct = 0 ;  // 0  1  2
-		if(login_correct == 0 ) {
-			request.getRequestDispatcher("/sucLoginMain.html").forward(request, response);
-		}else if( login_correct == 1) {
-			request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
-		}
-=======
+
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		
 		System.out.println(id);
 		System.out.println(pw);
-		
 		
 		CusDao cusdao = new CusDao();
 		CusService service = new CusService(cusdao);
@@ -65,6 +51,6 @@ public class LoginServlet extends HttpServlet{
             PrintWriter script = response.getWriter();
             script.println("<script>alert('DB 오류'); history.back(); </script>");
          }
->>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
+
 	}
 }

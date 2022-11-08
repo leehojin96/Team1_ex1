@@ -42,10 +42,7 @@
 <td> <%= res.getId() %></td>
 <td> <%= res.getPk_num() %></td>
 <td> <%= res.getPrice() %></td>
-<td> <%= res.getPersons() %> / <a href="tourRes">예약 상세</a>
-</form>
-
-</td>
+<td> <%= res.getPersons() %> / <a href="tourRes">예약 상세</a></td>
 </tr>
 <% } %>
 

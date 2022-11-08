@@ -27,15 +27,6 @@
 <form name="joinfrm" action="tourJoin" method="post">
 <table>
 <tr><td>이름</td><td><input type="text" name = "name"></td></tr>
-<<<<<<< HEAD
-<tr><td>아이디</td><td><input type="text" name = "id"></td></tr>
-<tr><td>비밀번호</td><td><input type="text" name = "pw"></td></tr>
-<tr><td>비밀번호확인</td><td><input type="text" name = "pwcheck"></td></tr>
-<tr><td>휴대폰번호</td><td><input type="text" name = "phone"></td></tr>
-<tr><td>주민번호</td><td><input type="text" name = "birth"></td></tr>
-<tr><td>성별</td><td><input type="radio" name = "gender" value="남">남 <input type="radio" name = "gender">여</td></tr>
-<tr><td colspan="2"><button type="submit" >가입하기</button></td></tr>
-=======
 <tr><td>아이디</td><td><input type="text" name = "id" placeholder="ex) 1234@naver.com"></td></tr>
 <tr><td>비밀번호</td><td><input type="password" name = "pw"></td></tr>
 <tr><td>비밀번호확인</td><td><input type="password" name = "pwcheck"></td></tr>
@@ -51,7 +42,6 @@
 <button type="button" onclick="location.href='mainIndex.html'">가입취소</button>
 </td>
 </tr>
->>>>>>> branch 'master' of https://github.com/leehojin96/Team1_ex1.git
 
 </table>
 </form>
