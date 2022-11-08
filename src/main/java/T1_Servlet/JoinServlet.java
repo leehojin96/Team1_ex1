@@ -26,7 +26,6 @@ public class JoinServlet extends HttpServlet{
 	}
 	
 	@Override
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		// 넘어온 데이터 가져오기
@@ -38,9 +37,6 @@ public class JoinServlet extends HttpServlet{
 		String phone = request.getParameter("phone");
 		String birth = request.getParameter("birth");
 		String gender = request.getParameter("gender");
-		
-		
-		// 디비에 저장
 		
 		//회원 객체 생성
 		Customer customer = new Customer(name, id, pw, phone, birth, gender, 0);

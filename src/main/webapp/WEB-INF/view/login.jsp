@@ -13,7 +13,7 @@
 </header>
 
 <%
- String  id  = (String)request.getAttribute("id");
+ String id = (String)request.getAttribute("id");
  if( id == null) id="";
 %>
 <!-- 로그인 전 메뉴 -->

@@ -3,6 +3,7 @@ package T1_Dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CusDao {
@@ -15,6 +16,8 @@ public class CusDao {
 	String password = "1234";
 	Connection con = null; // Connection(전역변수) 초기화
 			
+	// controller -> service -> DAO -> view 순서
+	
 	// db연결
 	private void dbCon() {
 		
@@ -27,6 +30,16 @@ public class CusDao {
 			e.printStackTrace();
 		}
 		System.out.print("연결 성공");
+		
+		String sql = "select * from cus_info";
+		PreparedStatement pst;
+		try {
+			pst = con.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -57,6 +70,8 @@ public class CusDao {
 	}
 	
 	public void login() {
+		dbCon();
+		String sql = "select pw where id = ?";
 		
 	}
 	
@@ -64,3 +79,6 @@ public class CusDao {
 	
 	
 }
+	
+
+
