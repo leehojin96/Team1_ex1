@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="T1_Dao.Pay" %>
+<%@ page import="T1_Dao.Res" %>
 
 <%
 String path = request.getContextPath();
@@ -15,15 +15,24 @@ String path = request.getContextPath();
 <title>main</title>
 </head>
 <body>
-
+ <%
+    String id = (String)session.getAttribute("id");
+    %>
 <header>
 <h2>AcornTourReservation</h2>
 </header>
-<!-- 로그인 후 메뉴 -->
+
 <nav>
-<a href="/Team1_ex1/sucLoginMain.html">홈페이지</a>
+<%if(id == null){ %>
+<a href="mainindex">홈페이지</a>
+<a href="tourJoin">회원가입</a>
+<a href="tourLogin">로그인</a>
+<%} %>
+<%if(id != null){ %>
+<a href="mainindex">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
-<a href="tourRes">예약확인</a>
+<a href="logout">로그아웃</a>
+<%} %>
 </nav>
 
 <section>
@@ -31,22 +40,26 @@ String path = request.getContextPath();
 <table>
 <caption>예약내역</caption>
 <tr>
-<td>예약코드</td>
-<td>아이디(이메일)</td>
-<td>패키지번호</td>
-<td>결제금액</td>
-<td>인원</td>
+<td>예약번호</td>
+<td>결제코드</td>
+<td>이름</td>
+<td>영문 성명</td>
+<td>생년월일</td>
+<td>전화번호</td>
+<td>성별</td>
 </tr>
 <%
-ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
-	for(Pay res : list){
+ArrayList<Res> list = (ArrayList<Res>)request.getAttribute("list");
+	for(Res res : list){
 %>
 <tr>
+<td> <%= res.getRes_code()%></td>
 <td> <%= res.getPay_code()%></td>
-<td> <%= res.getId() %></td>
-<td> <%= res.getPk_num() %></td>
-<td> <%= res.getPrice() %></td>
-<td> <%= res.getPersons() %> / <a href="tourRes">예약 상세</a></td>
+<td> <%= res.getName() %></td>
+<td> <%= res.getEng_name() %></td>
+<td> <%= res.getBirth() %></td>
+<td> <%= res.getPhone() %></td>
+<td> <%= res.getGender() %></td>
 </tr>
 <% } %>
 

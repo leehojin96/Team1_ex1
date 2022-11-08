@@ -50,6 +50,8 @@ public class ResDao {
 					int birth = rs.getInt(5);
 					String phone = rs.getString(6);
 					String gender = rs.getString(7);
+					Res res = new Res(res_code,pay_code,name,eng_name,birth,phone,gender);
+					list.add(res);
 					
 				}
 				
@@ -65,5 +67,5 @@ public class ResDao {
 			return list;
 			
 		}
-		
+
 }

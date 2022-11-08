@@ -11,15 +11,24 @@
 
 </head>
 <body>
-
+ <%
+    String id = (String)session.getAttribute("id");
+    %>
 <header>
 <h2>AcornTourJoin</h2>
 </header>
-<!-- 로그인 전 메뉴 -->
+
 <nav>
-<a href="/Team1_ex1/mainIndex.html">홈페이지</a>
+<%if(id == null){ %>
+<a href="mainindex">홈페이지</a>
 <a href="tourJoin">회원가입</a>
 <a href="tourLogin">로그인</a>
+<%} %>
+<%if(id != null){ %>
+<a href="mainindex">홈페이지</a>
+<a href="tourMypage">마이페이지</a>
+<a href="logout">로그아웃</a>
+<%} %>
 </nav>
 
 <section>

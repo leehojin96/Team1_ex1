@@ -9,18 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import T1_Dao.Pay;
-import T1_Dao.PayDao;
+import T1_Dao.Res;
+import T1_Dao.ResDao;
 
-@WebServlet("/tourPay")
-public class PayServlet extends HttpServlet{
-
+@WebServlet("/tourRes")
+public class ResServlet extends HttpServlet{
+	
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
 		// dao  디비작업
-		PayDao dao = new PayDao();
-		ArrayList<Pay> list = dao.paylist();
+		ResDao dao = new ResDao();
+		ArrayList<Res> list = dao.res();
 				
 		// data 심기
 		request.setAttribute("list",list);

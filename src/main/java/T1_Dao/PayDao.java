@@ -55,7 +55,6 @@ public class PayDao {
 				list.add(pay);
 			}
 			
-			
 			rs.close();
 			st.close();
 			con.close();

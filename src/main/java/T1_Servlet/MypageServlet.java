@@ -18,13 +18,13 @@ import T1_Service.PayService;
 public class MypageServlet extends HttpServlet{
 
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
 		// dao  디비작업
-
 		HttpSession session = request.getSession();
-		String id   = (String) session.getAttribute("id");
-		if( id != null) {
+		String id = (String) session.getAttribute("id");
+		
+		if(id != null) {
 			PayDao dao = new PayDao();
 			PayService payservice = new PayService(dao);
 			ArrayList<Pay> list = payservice.paylist();
@@ -32,7 +32,7 @@ public class MypageServlet extends HttpServlet{
 			request.setAttribute("list",list);
 			
 			request.getRequestDispatcher("WEB-INF/view/mypage.jsp").forward(request, response);
-		}		
+		}
 	}
 
 }

@@ -15,14 +15,24 @@ String path = request.getContextPath();
 <title>main</title>
 </head>
 <body>
-
+ <%
+    String id = (String)session.getAttribute("id");
+    %>
 <header>
 <h2>AcornTourMypage</h2>
 </header>
-<!-- 로그인 후 메뉴 -->
+
 <nav>
-<a href="/Team1_ex1/sucLoginMain.html">홈페이지</a>
+<%if(id == null){ %>
+<a href="mainindex">홈페이지</a>
+<a href="tourJoin">회원가입</a>
+<a href="tourLogin">로그인</a>
+<%} %>
+<%if(id != null){ %>
+<a href="mainindex">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
+<a href="logout">로그아웃</a>
+<%} %>
 </nav>
 
 <section>
@@ -35,6 +45,7 @@ String path = request.getContextPath();
 <td>패키지번호</td>
 <td>결제금액</td>
 <td>인원</td>
+<td>상세내역페이지</td>
 </tr>
 <%
 ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
@@ -46,7 +57,7 @@ ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
 <td> <%= res.getPk_num() %></td>
 <td> <%= res.getPrice() %></td>
 <td> <%= res.getPersons() %></td>
-<td><a href="tourRes">결제 상세</a></td>
+<td><a href="tourRes">예약 상세</a></td>
 </tr>
 <% } %>
 
