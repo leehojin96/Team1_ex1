@@ -1,18 +1,18 @@
 package T1_Dao;
 
-public class Res {
+public class Pay {
 
-	String res_code;
+	String pay_code;
 	String id;
 	String pk_num;
 	int price;
 	int persons;
 	
-	public String getRes_code() {
-		return res_code;
+	public String getPay_code() {
+		return pay_code;
 	}
-	public void setRes_code(String res_code) {
-		this.res_code = res_code;
+	public void setPay_code(String pay_code) {
+		this.pay_code = pay_code;
 	}
 	public String getId() {
 		return id;
@@ -39,9 +39,9 @@ public class Res {
 		this.persons = persons;
 	}
 	
-	public Res(String res_code, String id, String pk_num, int price, int persons) {
+	public Pay(String pay_code, String id, String pk_num, int price, int persons) {
 		super();
-		this.res_code = res_code;
+		this.pay_code = pay_code;
 		this.id = id;
 		this.pk_num = pk_num;
 		this.price = price;
@@ -50,7 +50,7 @@ public class Res {
 	
 	@Override
 	public String toString() {
-		return "Res [res_code=" + res_code + ", id=" + id + ", pk_num=" + pk_num + ", price=" + price + ", persons="
+		return "Res [pay_code=" + pay_code + ", id=" + id + ", pk_num=" + pk_num + ", price=" + price + ", persons="
 				+ persons + "]";
 	}
 	

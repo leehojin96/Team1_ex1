@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="T1_Dao.Res" %>
+<%@ page import="T1_Dao.Pay" %>
 
-<%String path = request.getContextPath();%>
+<%
+String path = request.getContextPath();
+%>
 <link rel="styLesheet" href="<%=path%>/css/mypage.css">
 
 <!DOCTYPE html>
@@ -21,7 +23,6 @@
 <nav>
 <a href="/Team1_ex1/sucLoginMain.html">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
-<a href="tourRes">예약확인</a>
 </nav>
 
 <section>
@@ -35,10 +36,12 @@
 <td>결제금액</td>
 <td>인원</td>
 </tr>
-<% ArrayList<Res> list = (ArrayList<Res>)request.getAttribute("list");
-	for(Res res : list){ %>
+<%
+ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
+	for(Pay res : list){
+%>
 <tr>
-<td> <%= res.getRes_code()%></td>
+<td> <%= res.getPay_code()%></td>
 <td> <%= res.getId() %></td>
 <td> <%= res.getPk_num() %></td>
 <td> <%= res.getPrice() %></td>

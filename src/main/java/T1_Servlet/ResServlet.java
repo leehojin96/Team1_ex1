@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import T1_Dao.Res;
-import T1_Dao.ResDao;
+import T1_Dao.Pay;
+import T1_Dao.PayDao;
 
 @WebServlet("/tourRes")
 public class ResServlet extends HttpServlet{
@@ -19,8 +19,8 @@ public class ResServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
 		// dao  디비작업
-				ResDao dao = new ResDao();
-				ArrayList<Res> list = dao.res();
+				PayDao dao = new PayDao();
+				ArrayList<Pay> list = dao.pay();
 				
 				// data 심기
 				request.setAttribute("list",list);
