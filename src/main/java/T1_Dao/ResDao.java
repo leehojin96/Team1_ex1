@@ -63,4 +63,16 @@ public class ResDao {
 		}
 		return list;
 	}
+	
+	// 테스트용 메인입니다.
+	public static void main(String[] args) {
+
+		ResDao  dao = new ResDao();		
+		ArrayList<Res > list  = dao.res();
+
+		for( Res res : list) {
+			System.out.println(res);
+		}
+
+	}
 }
