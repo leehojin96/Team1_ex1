@@ -13,14 +13,14 @@ import T1_Dao.Pay;
 import T1_Dao.PayDao;
 
 @WebServlet("/tourRes")
-public class ResServlet extends HttpServlet{
+public class PayServlet extends HttpServlet{
 
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
 		// dao  디비작업
 				PayDao dao = new PayDao();
-				ArrayList<Pay> list = dao.pay();
+				ArrayList<Pay> list = dao.paylist();
 				
 				// data 심기
 				request.setAttribute("list",list);

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import T1_Dao.CusDao;
 import T1_Service.CusService;
@@ -40,7 +41,11 @@ public class LoginServlet extends HttpServlet{
 		System.out.println(result);
 		
 		if(result == 1 ){
-            request.getRequestDispatcher("/sucLoginMain.html").forward(request, response);
+			
+		  HttpSession  session= 	request.getSession();
+		  session.setAttribute("id", id);
+			
+            request.getRequestDispatcher("mainindex").forward(request, response);
          } else if (result == 0){
             PrintWriter script = response.getWriter();
             script.println("<script>alert('비밀번호가 틀립니다.'); history.back(); </script>");

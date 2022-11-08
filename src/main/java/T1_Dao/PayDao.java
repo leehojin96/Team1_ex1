@@ -35,7 +35,7 @@ public class PayDao {
 		
 	}
 
-	public ArrayList<Pay> pay(){
+	public ArrayList<Pay> paylist(){
 		
 		ArrayList<Pay> list = new ArrayList<>();
 		dbCon();
@@ -50,6 +50,9 @@ public class PayDao {
 				String pk_num = rs.getString(3);
 				int price = rs.getInt(4);
 				int persons = rs.getInt(5);
+				
+				Pay pay = new Pay(pay_code, id, pk_num, price, persons);
+				list.add(pay);
 			}
 			
 			

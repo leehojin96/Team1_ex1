@@ -5,7 +5,7 @@ function login(){
 	let pw = frm.pw;
 	
 	if(id.value==""){
-		alert("이름을 입력해주세요");
+		alert("아이디를 입력해주세요");
 		id.focus();
 	}else if(pw.value==""){
 		alert("비밀번호를 입력해주세요.");
