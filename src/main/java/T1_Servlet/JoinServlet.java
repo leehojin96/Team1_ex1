@@ -53,5 +53,7 @@ public class JoinServlet extends HttpServlet{
 		response.sendRedirect("tourLogin");
 		
 		
+		request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
+		
 	}
 }

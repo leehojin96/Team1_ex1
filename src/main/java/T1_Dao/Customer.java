@@ -8,6 +8,9 @@ String phone;
 String birth;
 String gender;
 int mileage;
+
+public Customer() {}
+
 public Customer(String name, String id, String pw, String phone, String birth, String gender, int mileage) {
 	this.name = name;
 	this.id = id;
@@ -23,7 +26,6 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-
 
 public String getId() {
 	return id;
