@@ -31,10 +31,7 @@
 <tr><td><input type="password" name="pw" palceholder = "비밀번호"></td></tr>
 <tr colspan="2">
 <td>
-<button type="button" onclick="login()">로그인</button>
-</td>
-<td>
-<button type="button" onclick="location.href='mainIndex.html'">메인화면</button>
+<button type="button" onclick="login()">로그인</button><button type="button" onclick="location.href='mainIndex.html'">메인화면</button>
 </td>
 </tr>
 </table>

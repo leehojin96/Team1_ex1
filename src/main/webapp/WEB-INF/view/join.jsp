@@ -39,8 +39,6 @@
 <tr colspan="2">
 <td>
 <button type="button" onclick="join()">가입하기</button>
-</td>
-<td>
 <button type="button" onclick="location.href='mainIndex.html'">가입취소</button>
 </td>
 </tr>

@@ -50,6 +50,10 @@ public class ResDao {
 				String pk_num = rs.getString(3);
 				int price = rs.getInt(4);
 				int persons = rs.getInt(5);
+				
+				Res res = new Res(res_code,id,pk_num,price,persons);
+				list.add(res);				
+				
 			}
 			
 			rs.close();
@@ -60,5 +64,17 @@ public class ResDao {
 				e.printStackTrace();
 		}
 		return list;
+	}
+	
+	// 테스트용 메인입니다.
+	public static void main(String[] args) {
+		
+		ResDao  dao = new ResDao();		
+		ArrayList<Res > list  = dao.res();
+
+		for( Res res : list) {
+			System.out.println(res);
+		}
+		
 	}
 }

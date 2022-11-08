@@ -1,39 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="T1_Dao.Res" %>
 
 <%String path = request.getContextPath();%>
 <link rel="styLesheet" href="<%=path%>/css/res.css">
 
-<%
-	String code = request.getParameter("code");
-	// 데이터베이스에 등록 
-	String driver = "oracle.jdbc.driver.OracleDriver" ;
-	String url="jdbc:oracle:thin:@localhost:1521:xe";
-	String user="system";
-	String password="1234";
-	
-	// 드라이브로드
-	Class.forName(driver);
-	
-	// 데이터베이스 연결
-	Connection con = DriverManager.getConnection(url, user, password);
-	
-	// 데이터베이스 연결 확인
-	/*
-	if( con != null){
-    	out.println("dbok");
-    }else{
-    	out.println("db fail");
-    }
-	*/
-	
-	// sql 작성 및 실행
-	String sql = "select * from res_info";
-	Statement st = con.createStatement();
-	ResultSet rs = st.executeQuery(sql);
-
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,17 +36,18 @@
 <td>인원</td>
 </tr>
 
-<% while( rs.next()){ %>
+<% ArrayList<Res> list = (ArrayList<Res>)request.getAttribute("list");
+	for(Res res : list){ %>
 <tr>
-<td> <%= rs.getString(1) %></td>
-<td> <%= rs.getString(2) %></td>
-<td> <%= rs.getString(3) %></td>
-<td> <%= rs.getString(4) %></td>
-<td> <%= rs.getString(5) %> / <a href="T1update.jsp?code=<%=rs.getString(5)%>">예약내역 변경 / </a>
+<td> <%= res.getRes_code()%></td>
+<td> <%= res.getId() %></td>
+<td> <%= res.getPk_num() %></td>
+<td> <%= res.getPrice() %></td>
+<td> <%= res.getPersons() %> / <a href="T1update.jsp?code=<%=res.getPersons()%>">예약내역 변경 / </a>
 
 <form name="frm" action="T1rdelete.jsp" method="post">
-<a href="T1delete.jsp?code=<%=rs.getString(5)%>">예약 취소</a>
-<input type="hidden" name="s_code" value="<%=code %>">
+<a href="T1delete.jsp?code=<%=res.getPersons()%>">예약 취소</a>
+<input type="hidden" name="s_code" value="<%=%>">
 </form>
 
 </td>

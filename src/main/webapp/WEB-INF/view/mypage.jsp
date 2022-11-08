@@ -27,16 +27,16 @@
 <section>
 
 <table>
-<caption>예약내역</caption>
+<caption>결제내역</caption>
 <tr>
-<td>예약코드</td>
+<td>결제코드</td>
 <td>아이디(이메일)</td>
 <td>패키지번호</td>
 <td>결제금액</td>
 <td>인원</td>
 </tr>
 <% ArrayList<Res> list = (ArrayList<Res>)request.getAttribute("list");
-for( Res res : list){ %>
+	for(Res res : list){ %>
 <tr>
 <td> <%= res.getRes_code()%></td>
 <td> <%= res.getId() %></td>
