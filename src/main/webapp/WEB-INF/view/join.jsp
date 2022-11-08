@@ -20,12 +20,12 @@
 
 <nav>
 <%if(id == null){ %>
-<a href="mainindex">홈페이지</a>
+<a href="mainIndex">홈페이지</a>
 <a href="tourJoin">회원가입</a>
 <a href="tourLogin">로그인</a>
 <%} %>
 <%if(id != null){ %>
-<a href="mainindex">홈페이지</a>
+<a href="mainIndex">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
 <a href="logout">로그아웃</a>
 <%} %>
@@ -48,7 +48,7 @@
 <tr colspan="2">
 <td>
 <button type="button" onclick="join()">가입하기</button>
-<button type="button" onclick="location.href='mainIndex.html'">가입취소</button>
+<button type="button" onclick="location.href='mainIndex'">가입취소</button>
 </td>
 </tr>
 

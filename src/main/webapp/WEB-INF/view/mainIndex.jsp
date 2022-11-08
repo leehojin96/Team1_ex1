@@ -18,12 +18,12 @@
 
 <nav>
 <%if(id == null){ %>
-<a href="mainindex">홈페이지</a>
+<a href="mainIndex">홈페이지</a>
 <a href="tourJoin">회원가입</a>
 <a href="tourLogin">로그인</a>
 <%} %>
 <%if(id != null){ %>
-<a href="mainindex">홈페이지</a>
+<a href="mainIndex">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
 <a href="logout">로그아웃</a>
 <%} %>

@@ -44,8 +44,8 @@ public class LoginServlet extends HttpServlet{
 			
 		  HttpSession  session= 	request.getSession();
 		  session.setAttribute("id", id);
-			
-            request.getRequestDispatcher("mainindex").forward(request, response);
+            request.getRequestDispatcher("mainIndex").forward(request, response);
+            
          } else if (result == 0){
             PrintWriter script = response.getWriter();
             script.println("<script>alert('비밀번호가 틀립니다.'); history.back(); </script>");
