@@ -13,6 +13,51 @@ String path = request.getContextPath();
 <head>
 <meta charset="UTF-8">
 <title>main</title>
+<style>
+ul{ list-style: none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function res_info() {
+	$.ajax(
+			{
+				type:"get",
+				 dataType:"json",              
+				 url:"/team1_ex2/res_list",	
+				 success: function( data, textStatus){
+					//alert(data);
+					//console.log(data);
+					let res_list  = data.result;
+					$("#res_list").empty();
+					
+					
+					for( let i=0 ; i< res_list.length; i ++){
+				    	   let res = res_list[i];
+				    	   
+					let  res_code  = res.res_code ;
+					let  pay_code  = res.pay_code ;
+					let  name  = res.name ;
+					let  eng_name  = res.eng_name ;
+					let  birth  = res.birth ;
+					let  phone  = res.phone ;
+					let  gender  = res.gender ;
+					
+				    	   //$("#res_list").append(`<li>${res.res_code} ${res.review} ${res.pay_code} ${res.name} ${res.eng_name} ${res.birth} ${res.phone} ${res.gender}</li>`);
+				      $("#res_list").append('<li>'+res_code+'	'+ pay_code+'	'+ name+'	'+ eng_name+'	'+ birth+'	'+ phone+'	'+ gender+'</li>');
+				      
+						
+				    }
+				},
+				 error: function( data, textStatus){			 
+				 },		 
+				 complete:function(data, textStatus){
+					// alert("done");
+				 }		 
+			})
+	
+}
+</script>
 </head>
 <body>
  <%
@@ -77,12 +122,12 @@ ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
 <td> <a href="tourPackageInfo"><%= res.getPk_num() %></a></td>
 <td> <%= res.getPrice() %></td>
 <td> <%= res.getPersons() %></td>
-<td><a href="tourRes">예약 상세</a></td>
+<td><input type="button" onclick="res_info()" value="예약 상세"></td>
 </tr>
 <% } %>
 
 </table>
-
+<ul id="res_list"></ul>
 </section>
 
 <footer>
