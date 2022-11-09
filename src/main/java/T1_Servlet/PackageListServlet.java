@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebServlet("/package_list")
-public class PkServlet extends HttpServlet{
+public class PackageListServlet extends HttpServlet{
 
   @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
