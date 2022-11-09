@@ -6,7 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CusDao {
+import T1_Dto.Customer;
+
+public class CustomerDao {
 
 	// db작업 
 	// 연결정보
@@ -116,15 +118,12 @@ public class CusDao {
 		}
 		return customer;
 		
-		
-		
-		
 	}
 	
 	// 테스트용 메인입니다.
 	public static void main(String[] args) {
 		
-		CusDao dao  = new CusDao();
+		CustomerDao dao  = new CustomerDao();
 		int result  = dao.loginCheck("bin7143@naver.com", "1q2w3e4r");
 		System.out.println(result + "정상작동");
 		

@@ -28,7 +28,7 @@ public class PackageServlet extends HttpServlet{
 		if(id != null) {
 			PackageDao dao = new PackageDao();
 			PackageService payservice = new PackageService(dao);
-			ArrayList<T1_Dao.Package> list = payservice.packagelist();
+			ArrayList<T1_Dto.Package> list = payservice.packagelist();
 			// data 심기
 			request.setAttribute("list",list);
 			

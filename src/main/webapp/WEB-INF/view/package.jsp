@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="T1_Dao.Package" %>
+<%@ page import="T1_Dto.Package" %>
 
 <%
 String path = request.getContextPath();

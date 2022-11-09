@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import T1_Dto.Res;
+
 public class ResDao {
 	// db작업 
 		// 연결정보

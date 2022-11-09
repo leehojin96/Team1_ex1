@@ -3,8 +3,8 @@ package T1_Service;
 import java.util.ArrayList;
 
 import T1_Dao.PackageDao;
-import T1_Dao.Pay;
 import T1_Dao.PayDao;
+import T1_Dto.Pay;
 
 public class PackageService {
 
@@ -16,8 +16,8 @@ public class PackageService {
 		this.dao = dao;
 	}
 	
-	public ArrayList<T1_Dao.Package> packagelist() {
-		ArrayList<T1_Dao.Package> list = new ArrayList<>();
+	public ArrayList<T1_Dto.Package> packagelist() {
+		ArrayList<T1_Dto.Package> list = new ArrayList<>();
 		list = this.dao.packagelist();
 		return list;
 	}

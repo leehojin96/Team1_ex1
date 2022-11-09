@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import T1_Dao.CusDao;
+import T1_Dao.CustomerDao;
 import T1_Service.CusService;
 
 @WebServlet("/tourLogin")
@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet{
 		System.out.println(id);
 		System.out.println(pw);
 		
-		CusDao cusdao = new CusDao();
+		CustomerDao cusdao = new CustomerDao();
 		CusService service = new CusService(cusdao);
 		int result = service.checkLogin(id, pw);
 		

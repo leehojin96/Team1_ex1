@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="T1_Dao.Pay" %>
-<%@ page import="T1_Dao.Customer" %>
+<%@ page import="T1_Dto.Pay" %>
+<%@ page import="T1_Dto.Customer" %>
 <%
 String path = request.getContextPath();
 %>
@@ -31,6 +31,7 @@ String path = request.getContextPath();
 <%if(id != null){ %>
 <a href="mainIndex">홈페이지</a>
 <a href="tourMypage">마이페이지</a>
+<a href="tourMypageUpdate">회원정보수정</a>
 <a href="logout">로그아웃</a>
 <%} %>
 </nav>
@@ -41,9 +42,7 @@ String path = request.getContextPath();
 <tr>
 <td>이름</td>
 <td>아이디(이메일)</td>
-<td>비밀번호</td>
 <td>휴대폰번호</td>
-<td>주민등록번호</td>
 <td>성별</td>
 <td>마일리지</td>
 </tr>
@@ -52,9 +51,7 @@ String path = request.getContextPath();
 <tr>
 <td><%=customer.getName() %></td>
 <td><%=customer.getId() %></td>
-<td><%=customer.getPw() %></td>
 <td><%=customer.getPhone() %></td>
-<td><%=customer.getBirth() %></td>
 <td><%=customer.getGender() %></td>
 <td><%=customer.getMileage() %></td>
 </tr>

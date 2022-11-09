@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import T1_Dto.Pay;
+
 public class PayDao {
 
 	// db작업 

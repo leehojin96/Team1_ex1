@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import T1_Dao.Res;
 import T1_Dao.ResDao;
+import T1_Dto.Res;
 
 @WebServlet("/tourRes")
 public class ResServlet extends HttpServlet{

@@ -1,4 +1,4 @@
-package T1_Dao;
+package T1_Dto;
 
 public class Customer {
 String name;

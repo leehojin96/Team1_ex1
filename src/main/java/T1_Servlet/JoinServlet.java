@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import T1_Dao.CusDao;
-import T1_Dao.Customer;
+import T1_Dao.CustomerDao;
+import T1_Dto.Customer;
 import T1_Service.CusService;
 
 @WebServlet("/tourJoin")
@@ -42,7 +42,7 @@ public class JoinServlet extends HttpServlet{
 		Customer customer = new Customer(name, id, pw, phone, birth, gender, 0);
 		
 		// 회원 dao 생성
-		CusDao cusdao = new CusDao();
+		CustomerDao cusdao = new CustomerDao();
 		
 		// 회원 서비스 회원dao매개변수로 생성
 		CusService cusservice = new CusService(cusdao);

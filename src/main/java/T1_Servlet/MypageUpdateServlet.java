@@ -17,8 +17,8 @@ import T1_Dto.Pay;
 import T1_Service.CusService;
 import T1_Service.PayService;
 
-@WebServlet("/tourMypage")
-public class MypageServlet extends HttpServlet{
+@WebServlet("/tourMypageUpdate")
+public class MypageUpdateServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class MypageServlet extends HttpServlet{
 			request.setAttribute("list",list);
 			request.setAttribute("customer", customer);
 			
-			request.getRequestDispatcher("WEB-INF/view/mypage.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/view/mypageupdate.jsp").forward(request, response);
 		}
 	}
 
