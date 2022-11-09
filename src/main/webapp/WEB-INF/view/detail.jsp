@@ -34,8 +34,10 @@ border-collapse: collapse;
 <td>출국항공편 : <%=tour.getDeparture()%></td>
 <td>입국항공편 : <%=tour.getDestination()%></td>
 <td>가격 : <%=tour.getPrice()%> ~부터</td>
-<td>여행지 : <%=tour.getTrv_place()%> </td>
+<td>여행지 : <%=tour.getTrv_place()%> </td>	
 <td>호텔번호 : <%=tour.getHt_key()%></td>
+
+
 <td><button onclick="location.href='reservation'")>예약하기</button> </td>
 </tr>
 
