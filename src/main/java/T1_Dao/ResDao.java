@@ -34,13 +34,14 @@ public class ResDao {
 			
 		}
 		
-		public ArrayList<Res> res(){
+		public ArrayList<Res> res(String login_pay_code){
 			ArrayList<Res> list = new ArrayList<>();
 			dbCon();
-			String sql = "select * from res_info";
+			String sql = "select * from res_info where pay_code=?";
 			
 			try {
 				PreparedStatement pst = con.prepareStatement(sql);
+				pst.setString(1, login_pay_code);
 				ResultSet rs = pst.executeQuery();
 				
 				while(rs.next()) {

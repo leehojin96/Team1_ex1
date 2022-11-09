@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import T1_Dao.ResDao;
 import T1_Service.ResService;
 
-@WebServlet("/res_list123")
+@WebServlet("/res_list")
 public class ResController extends HttpServlet{
 @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

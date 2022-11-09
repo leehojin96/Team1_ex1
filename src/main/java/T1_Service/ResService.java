@@ -21,8 +21,8 @@ public class ResService {
 		this.resdao = resdao;
 	}
 	
-	public String getResList() {
-		ArrayList<Res> reslist = resdao.res();
+	public String getResList(String pay_code) {
+		ArrayList<Res> reslist = resdao.res(pay_code);
 		JSONArray list = new JSONArray();
 		
 		for(Res res : reslist) {
@@ -45,7 +45,7 @@ public class ResService {
 		ResDao resdao = new ResDao();
 		ResService resservice = new ResService(resdao);
 		
-		String st = resservice.getResList();
+		String st = resservice.getResList("tuy765@naver.com");
 		System.out.print(st);
 	}
 	
