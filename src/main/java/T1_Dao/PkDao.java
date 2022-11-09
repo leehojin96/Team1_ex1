@@ -17,8 +17,6 @@ public class PkDao {
 		String url="jdbc:oracle:thin:@localhost:1521:xe";
 		String user="system";
 		String password="1234";
-
-		
 		Connection con= null;
 		
 		private void dbCon() {	
@@ -95,7 +93,7 @@ public class PkDao {
 		public package_info pk(String pk_num) {
 			
 			dbCon();
-			String sql = "select * from package_info p join flight_info f on p.departure = f.flight_num join hotel_info h on p.ht_key = h.ht_key where pk_num = ?"; 
+			String sql = "select * from package_info p join flight_info f on p.departure = f.flight_num join flight_info f on p.destination = f.flight_num join hotel_info h on p.hotel_name = h.ht_key where pk_num = ?"; 
 			package_info pk = null;
 			try {
 				PreparedStatement pst = con.prepareStatement(sql);
@@ -110,9 +108,26 @@ public class PkDao {
 					String Destination = rs.getString(5);
 					int Price = rs.getInt(6);
 					String trv_place = rs.getString(7);
-					String ht_key = rs.getString(8);
-					
-					pk = new package_info( pk_num, pk_name,schedule,Departure,Destination,Price,trv_place,ht_key);
+					String hotel_name = rs.getString(8);
+					String flight_num = rs.getString(9);
+					String dep_date = rs.getString(10);
+					String dep_time = rs.getString(11);
+					String des_date = rs.getString(12);
+					String des_time = rs.getString(13);
+					String flight_time = rs.getString(14);
+					String airline = rs.getString(15);
+					String alrline_class = rs.getString(16);
+					String dep_place = rs.getString(17);
+					String des_place = rs.getString(18);
+					String ht_key = rs.getString(19);
+					String ht_name = rs.getString(20);
+					String room_type = rs.getString(21);
+					String amenities = rs.getString(22);
+					String ht_offers = rs.getString(23);
+					String check_time = rs.getString(24);
+					String ht_ad = rs.getString(25);
+		
+					pk = new package_info(pk_num,pk_name,schedule,Departure,Destination,Price,trv_place,hotel_name,flight_num,dep_date,dep_time,des_date,des_time,flight_time,airline,alrline_class,dep_place,des_place,ht_key,ht_name,room_type,amenities,ht_offers,check_time,ht_ad);
 				}	
 				
 				rs.close();
@@ -125,6 +140,12 @@ public class PkDao {
 			return pk;
 		}
 		
-		
+		public static void main(String[] args) {
+			
+			PkDao dao = new PkDao();
+			package_info result = dao.pk(null);
+			System.out.println(result + "정상작동");
+				
+		}
 		
 }
