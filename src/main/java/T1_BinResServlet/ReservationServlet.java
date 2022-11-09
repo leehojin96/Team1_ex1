@@ -13,7 +13,7 @@ public class ReservationServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/views/res.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);
 		System.out.println("가져와요");
 	}
 	
