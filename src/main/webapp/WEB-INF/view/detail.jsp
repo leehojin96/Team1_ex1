@@ -19,7 +19,7 @@ border-collapse: collapse;
 <h3>패키지 투어별 상세일정</h3>
 
 <%
-  package_info tour = (package_info )request.getAttribute("info");
+  package_info tour = (package_info)request.getAttribute("info");
 %>
 
 <table> 

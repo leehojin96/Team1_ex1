@@ -15,8 +15,8 @@ public class PackageListServlet extends HttpServlet{
   @Override
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	  
-		HttpSession session = request.getSession();
-		String id = (String) session.getAttribute("id");
-	  request.getRequestDispatcher("/WEB-INF/view/PklistAjax.jsp").forward(request, response);
+	HttpSession session = request.getSession();
+	String id = (String) session.getAttribute("id");
+	request.getRequestDispatcher("/WEB-INF/view/PklistAjax.jsp").forward(request, response);
 }
 }

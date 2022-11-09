@@ -26,7 +26,7 @@ public class PkController extends HttpServlet{
 		
 		//패키지번호 얻어옹기
 		 String no = request.getParameter("no");
-		 System.out.println( " no = "  + no);
+		 System.out.println( "no = " + no);
 		 
 		PkDao dao = new PkDao();
 		 
@@ -39,8 +39,6 @@ public class PkController extends HttpServlet{
 	    //페이지이동
 		//request.setAttribute("list", result);
 		//request.getRequestDispatcher("/WEB-INF/view/Pklist.jsp").forward(request, response);
-}
-
-
+	}
 
 }

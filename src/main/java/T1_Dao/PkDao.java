@@ -92,11 +92,11 @@ public class PkDao {
 	}
 		
 		// 패키지 1개 조회
-		public package_info   pk( String pk_num) {
-			 
+		public package_info pk(String pk_num) {
+			
 			dbCon();
-			String sql = " select * from package_info  where pk_num  = ? " ; 
-			 package_info pk = null;
+			String sql = "select * from package_info p join flight_info f on p.departure = f.flight_num join hotel_info h on p.ht_key = h.ht_key where pk_num = ?"; 
+			package_info pk = null;
 			try {
 				PreparedStatement pst = con.prepareStatement(sql);
 				pst.setString(1, pk_num);
@@ -112,7 +112,7 @@ public class PkDao {
 					String trv_place = rs.getString(7);
 					String ht_key = rs.getString(8);
 					
-					pk = new package_info( pk_num, pk_name,schedule,Departure,Destination,Price,trv_place,ht_key );
+					pk = new package_info( pk_num, pk_name,schedule,Departure,Destination,Price,trv_place,ht_key);
 				}	
 				
 				rs.close();
@@ -120,10 +120,11 @@ public class PkDao {
 				con.close();
 				
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 		
 			return pk;
 		}
+		
+		
 		
 }
