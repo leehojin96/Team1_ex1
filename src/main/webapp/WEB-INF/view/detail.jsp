@@ -12,6 +12,9 @@ border : solid;black;1px;
 border-collapse: collapse;
 }
 </style>
+<script>
+
+</script>
 </head>
 <body>
 
@@ -33,7 +36,7 @@ border-collapse: collapse;
 <td>가격 : <%=tour.getPrice()%> ~부터</td>
 <td>여행지 : <%=tour.getTrv_place()%> </td>
 <td>호텔번호 : <%=tour.getHt_key()%></td>
-<td><button>예약하기</button> </td>
+<td><button onclick="location.href='reservation'")>예약하기</button> </td>
 </tr>
 
  
