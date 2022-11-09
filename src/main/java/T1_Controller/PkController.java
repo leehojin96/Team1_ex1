@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import T1_Dao.PkDao;
 import T1_Service.PkListService;
@@ -39,4 +40,7 @@ public class PkController extends HttpServlet{
 		//request.setAttribute("list", result);
 		//request.getRequestDispatcher("/WEB-INF/view/Pklist.jsp").forward(request, response);
 }
+
+
+
 }

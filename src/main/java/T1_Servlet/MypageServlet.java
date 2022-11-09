@@ -23,7 +23,7 @@ public class MypageServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
-		// dao  디비작업
+		
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
