@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/reservation1")
+@WebServlet("/reservation")
 public class ReservationServlet extends HttpServlet {
 
 	@Override
@@ -24,7 +24,7 @@ public class ReservationServlet extends HttpServlet {
 		
 		System.out.println("가져와요2");
 		
-		String pay_code = request.getParameter("pay_code");
+		//String pay_code = request.getParameter("pay_code");
 		String name = request.getParameter("name");
 		String eng_name = request.getParameter("eng_name");
 		int birth = Integer.parseInt(request.getParameter("birth"));
@@ -36,13 +36,13 @@ public class ReservationServlet extends HttpServlet {
 		System.out.println("제발아아앙");
 		
 		
-		CustomerDao dao = new CustomerDao();
-		Customer c = new Customer("10", pay_code,name,eng_name, birth, phone,gender);		
+		ResCustomerDao dao = new ResCustomerDao();
+		ResCustomer c = new ResCustomer("10", "임의로넣음",name,eng_name, birth, phone,gender);		
 		//CustomerDao dao = new CustomerDao();		
-		CustomerService service = new CustomerService(dao);		
+		ResCustomerService service = new ResCustomerService(dao);		
 		service.insert(c);
 		
-		response.sendRedirect("reservation");
+		response.sendRedirect("paypage");
 		
 		//데이터 insert 후 보낼 페이지
 		//request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);

@@ -1,6 +1,6 @@
 package T1_BinResServlet;
 
-public class Customer {
+public class ResCustomer {
 
 	String res_code;
 	String pay_code;
@@ -10,13 +10,13 @@ public class Customer {
 	String phone;
 	String gender;
 	
-	public Customer() {
+	public ResCustomer() {
 		// TODO Auto-generated constructor stub
 	}
 
 	
 	
-	public Customer(String res_code, String pay_code, String name, String eng_name, int birth, String phone,String gender) {
+	public ResCustomer(String res_code, String pay_code, String name, String eng_name, int birth, String phone,String gender) {
 		super();
 		this.res_code = res_code;
 		this.pay_code = pay_code;

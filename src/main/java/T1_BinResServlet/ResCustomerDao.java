@@ -6,9 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import T1_BinResServlet.Customer;
+import T1_BinResServlet.ResCustomer;
 
-public class CustomerDao {
+public class ResCustomerDao {
 
 	String driver = "oracle.jdbc.driver.OracleDriver";
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -40,18 +40,18 @@ public class CustomerDao {
 	}
 	
 	
-	public void insert(Customer customer) {
+	public void insert(ResCustomer customer) {
 		dbCon();
-		String sql = "insert into res_info values(  res_seq.nextval ,?,?,?,?,?,?)";
+		String sql = "insert into res_info values(  res_seq.nextval ,10,?,?,?,?,?)";
 		PreparedStatement pst;
 		try {
 			pst = con.prepareStatement(sql);		 
-			pst.setString(1, customer.getPay_code());
-			pst.setString(2, customer.getName());
-			pst.setString(3, customer.getEng_name());
-			pst.setInt(4, customer.getBirth());
-			pst.setString(5, customer.getPhone());
-			pst.setString(6, customer.getGender());
+			//pst.setString(1, customer.getPay_code());
+			pst.setString(1, customer.getName());
+			pst.setString(2, customer.getEng_name());
+			pst.setInt(3, customer.getBirth());
+			pst.setString(4, customer.getPhone());
+			pst.setString(5, customer.getGender());
 			pst.executeUpdate();
 			
 			pst.close();
@@ -65,8 +65,8 @@ public class CustomerDao {
 	
 	
 	public static void main(String[] args) {
-		CustomerDao  c = new CustomerDao();
-		Customer cu = new Customer( "dkdk","asdf","aaa","aaa",10,"aaa","aaa");
+		ResCustomerDao  c = new ResCustomerDao();
+		ResCustomer cu = new ResCustomer( "dkdk","asdf","aaa","aaa",10,"aaa","aaa");
 		c.insert(cu);
 		
 	}
