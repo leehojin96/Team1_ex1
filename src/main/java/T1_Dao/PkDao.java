@@ -33,37 +33,7 @@ public class PkDao {
 				e.printStackTrace();
 			}	
 		}
-	public package_info pk_where_pk_num(String pk_num) {
 		
-		dbCon();
-		String sql = "select * from package_info p join flight_info f on p.departure = f.flight_num join hotel_info h on p.ht_key = h.ht_key where pk_num = ?"; 
-		package_info pk = null;
-		try {
-			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(1, pk_num);
-			ResultSet  rs= pst.executeQuery();
-			
-			if(rs.next()) {
-				String pk_name = rs.getString(2);
-				String schedule = rs.getString(3);
-				String Departure = rs.getString(4);
-				String Destination = rs.getString(5);
-				int Price = rs.getInt(6);
-				String trv_place = rs.getString(7);
-				String ht_key = rs.getString(8);
-				
-				pk = new package_info( pk_num, pk_name,schedule,Departure,Destination,Price,trv_place,ht_key);
-			}	
-			
-			rs.close();
-			pst.close();
-			con.close();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} 		
-		return pk;
-	}
 		// 패키지 1개 조회
 	public package_info pk(String pk_num) {
 			
