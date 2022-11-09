@@ -124,7 +124,7 @@ function toggle(obj){
 <div class="wrap"> 
 
 <ul id="list">
-<li><a href="package_detail?pk_num=PA987"><img src=" "><p>[슈퍼세이브] 행복한 오사카여행<br> 12월 20일부터 12월 23일까지 [로칸1일숙박] 바쁜 당신을 위한 추천 상품// </p><p>여행기간 2박3일<br>★4.2</p></a>	
+<li><a href="package_detail?pk_num=Pj123"><img src=" "><p>[슈퍼세이브] 행복한 오사카여행<br> 12월 20일부터 12월 23일까지 [로칸1일숙박] 바쁜 당신을 위한 추천 상품// </p><p>여행기간 2박3일<br>★4.2</p></a>	
 <button onclick="toggle(this)">상품요약보기</button>
 	<div  class="detail">
 	

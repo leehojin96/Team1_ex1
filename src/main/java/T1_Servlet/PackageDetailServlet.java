@@ -26,7 +26,7 @@ public class PackageDetailServlet extends HttpServlet{
 		 response.setContentType("text/plain;charset=utf-8");
 		
 	  	 PkDao pkdao = new PkDao();
-		 package_info info   = pkdao.pk(pk_num); 
+		 package_info info = pkdao.pk(pk_num); 
 		
 		//PkListService service = new PkListService(); // <==패키지목록다오(sql불러오기전)에 꼭 붙여넣기
 		//service.setPkDao(pkdao) ;

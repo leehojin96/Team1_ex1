@@ -6,15 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-table,td{
-border : solid;black;1px;
-border-collapse: collapse;
-}
-</style>
-<script>
 
-</script>
+<%String path = request.getContextPath();%>
+<link rel="styLesheet" href="<%=path%>/css/detail.css">
+
 </head>
 <body>
 
@@ -35,13 +30,58 @@ border-collapse: collapse;
 <td>입국항공편 : <%=tour.getDestination()%></td>
 <td>가격 : <%=tour.getPrice()%> ~부터</td>
 <td>여행지 : <%=tour.getTrv_place()%> </td>	
-<td>호텔번호 : <%=tour.getHt_key()%></td>
-
-
+<td>호텔예약번호 : <%=tour.getHotel_number()%></td>
 <td><button onclick="location.href='reservation'")>예약하기</button> </td>
 </tr>
 
- 
+</table>
+
+<table> 
+
+<tr>
+<td>출국항공편 : <%=tour.getFlight_num()%></td>
+<td>출발일 : <%=tour.getDep_date()%></td>
+<td>출발 시간 : <%=tour.getDep_time() %></td>
+<td>도착일 : <%=tour.getDes_date()%></td>
+<td>도착시간 : <%=tour.getDes_time()%></td>
+<td>총 비행시간 : <%=tour.getFlight_time()%></td>
+<td>항공사 : <%=tour.getAirline()%> </td>	
+<td>항공사 분류 : <%=tour.getAlrline_class()%></td>
+<td>출발지 : <%=tour.getDep_place()%></td>
+<td>도착지 : <%=tour.getDes_place()%></td>
+</tr>
+
+</table>
+
+<table> 
+
+<tr>
+<td>출국항공편 : <%=tour.getFlight_num1()%></td>
+<td>출발일 : <%=tour.getDep_date1()%></td>
+<td>출발 시간 : <%=tour.getDep_time1() %></td>
+<td>도착일 : <%=tour.getDes_date1()%></td>
+<td>도착시간 : <%=tour.getDes_time1()%></td>
+<td>총 비행시간 : <%=tour.getFlight_time1()%></td>
+<td>항공사 : <%=tour.getAirline1()%> </td>	
+<td>항공사 분류 : <%=tour.getAlrline_class1()%></td>
+<td>출발지 : <%=tour.getDep_place1()%></td>
+<td>도착지 : <%=tour.getDes_place1()%></td>
+</tr>
+
+</table>
+
+<table> 
+
+<tr>
+<td>호텔예약번호 : <%=tour.getHt_key()%></td>
+<td>호텔명 : <%=tour.getHt_name()%></td>
+<td>주소 : <%=tour.getHt_ad()%></td>
+<td>객실 타입 : <%=tour.getRoom_type()%></td>
+<td>체크인 & 아웃 : <%=tour.getCheck_time()%></td>
+<td>객실 제공 : <%=tour.getAmenities()%></td>
+<td>호텔 제공 : <%=tour.getHt_offers()%> </td>
+</tr>
+
 </table>
 
 </div>
