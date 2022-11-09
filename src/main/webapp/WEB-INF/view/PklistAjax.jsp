@@ -123,14 +123,25 @@ function package_list( obj){
 
 </head>
 <body>
-
+ <%
+    String id = (String)session.getAttribute("id");
+    %>
 <header>AcornTour</header>
 	
 	<nav>
-	<a href="/Team1_ex1/mainIndex.html">홈페이지</a>
-	<a href="/Team1_ex1/tourMypage">마이페이지</a>
-	<a></a> 
-	</nav>
+<%if(id == null){ %>
+<a href="mainIndex">홈페이지</a>
+<a href="package_list">패키지 여행 목록</a>
+<a href="tourJoin">회원가입</a>
+<a href="tourLogin">로그인</a>
+<%} %>
+<%if(id != null){ %>
+<a href="mainIndex">홈페이지</a>
+<a href="package_list">패키지 여행 목록</a>
+<a href="tourMypage">마이페이지</a>
+<a href="logout">로그아웃</a>
+<%} %>
+</nav>
 	
 	<div>
 	<h2 id="id">고객님만을 위한 추천 패키지여행
