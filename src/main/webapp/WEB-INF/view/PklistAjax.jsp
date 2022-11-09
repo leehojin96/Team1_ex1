@@ -27,96 +27,67 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 function package_list( obj){
-	
-	  let li  = obj.parentElement;	
-	  let noTag  = li.querySelector("#no");
-	  let no =  noTag.value;
-	  alert( no);
-	 $.ajax(
-			{
-				 type:"get",
-				 dataType:"json",
-				 data:{ no : no} ,
-				 url:"/tour_pk/package_list.do",	    
-				 success: function( data, textStatus){
-				   //alert("fsf");
-			        console.log( data);	  //콘솔에서 json 데이터 확인하기 			        
-			        let pk_name = data.pk_name;
-			        let price = data.price;
-			        alert(price );
-			        
-			          
-			        let pk_nameTag  = li.querySelector("#pk_name");
-			        let priceTag  = li.querySelector("#price");
-			        pk_nameTag.value= pk_name;	
-			        priceTag.value= price;
-			        /*
-			        
-			        departure
-					: 
-					"TW0281"
-					destination
-					: 
-					"TW0282"
-					ht_key
-					: 
-					"H1031"
-					pk_name
-					: 
-					"행복한 오사카여행"
-					pk_num
-					: 
-					"Pj123"
-					price
-					: 
-					500000
-					schedule
-					: 
-					"2박3일"
-					trv_place
-					: 
-					"일본(오사카)"
-			        */
-			        
-			      		        				 
-				  			    
-				 }
-				 ,
-				 error: function( data, textStatus){			 
-				 },		 
-				 complete:function(data, textStatus){
-					 alert("done");
-				 }	 
-			}
-		 );
+
+let li  = obj.parentElement;	
+let noTag  = li.querySelector("#no");
+let no =  noTag.value;
+//alert( no);
+$.ajax(
+		{
+			 type:"get",
+			 dataType:"json",
+			 data:{ no : no} ,
+			 url:"/tour_pk/package_list.do",	    
+			 success: function( data, textStatus){
+		        console.log( data);	  //콘솔에서 json 데이터 확인하기 			        
+		        let pk_name = data.pk_name;
+		        let trv_place = data.trv_place;
+		        let price = data.price;
+		        let schedule =data.schedule;
+		        
+		          
+		        let pk_nameTag  = li.querySelector("#pk_name");
+		        let trv_placeTag  = li.querySelector("#trv_place");
+		        let priceTag  = li.querySelector("#price");
+		        let scheduleTag  = li.querySelector("#schedule");
+		        
+		        pk_nameTag.value= pk_name;	
+		        trv_placeTag.value=trv_place;
+		        priceTag.value= price;
+		        scheduleTag.value =schedule;
+		      
+			 }
+			 ,
+			 error: function( data, textStatus){			 
+			 },		 
+			 complete:function(data, textStatus){
+				 alert("여행을 떠나요");
+			 }	 
+		}
+	 );
 }
 </script>
 
 <script>
-    //ajax로 데이터받기
-    function toggle(obj){  
-        alert("dkfkdkf");
-        let li  = obj.parentElement;
-      //  alert( li );
-        let detail  = li.querySelector(".detail");
-       // alert( detail);
-        let flagTag  =  li.querySelector("#flag");
-        
-
-     // alert(detail ) ;
-     // alert( flagTag.value);
-        let flag = flagTag.value;
-       
-        if( flag ==0){
-           package_list(obj);         	
-        	//package_list();   
-            detail.style.display="block";
-            flagTag.value=1;
-        }else{      
-            detail.style.display="none";
-            flagTag.value=0;;
-        }
+//ajax로 데이터받기
+function toggle(obj){  
+    let li  = obj.parentElement;
+    let detail  = li.querySelector(".detail");
+    let flagTag  =  li.querySelector("#flag");
+  
+    let flag = flagTag.value;
+   
+    if( flag ==0){
+       package_list(obj);         	
+    	//package_list();   
+        detail.style.display="block";
+        flagTag.value=1;
+    }else{      
+        detail.style.display="none";
+        flagTag.value=0;;
     }
+}
+
 
 </script>
 
@@ -157,15 +128,18 @@ function package_list( obj){
 <button onclick="toggle(this)">상품요약보기</button>
 	<div  class="detail">
 	
-		<패키지 가격 (원)> 
-		<input id="flag" type="hidden" value="0">
+			<input id="flag" type="hidden" value="0">
 		<input id="no" type="hidden"  value="Pj123"/>	 
 		 
 		 <div id="info">
-		    패키지정보
-		     <input type="text"  id="pk_name" >		
-		    <input type="text"  id="price" >		
-		         
+		     힐링+휴양 / 세이브투어
+		     <input type="text"  id="pk_name" >	<br>
+		     투어도시	
+		     <input type="text"  id="trv_place" ><br>
+		     가격(원)		
+		     <input type="text"  id="price" ><br>
+		     일정	
+		     <input type="text"  id="schedule" ><br>	
 		  </div>
 
 	</div>
@@ -175,14 +149,18 @@ function package_list( obj){
 <button  onclick="toggle(this)">상품요약보기</button>
 	<div  class="detail">
 	
-		<패키지 가격 (원)> 
 		<input id="flag" type="hidden" value="0">
 		<input id="no" type="hidden"  value="PA987"/>	 
 		 
 		 <div id="info">
-		    패키지정보
-		    <input type="text"  id="pk_name" >
-		    <input type="text"  id="price" >		     
+		     관광+쇼핑 / 얼리버드 
+		     <input type="text"  id="pk_name" ><br>
+		     투어도시		
+		     <input type="text"  id="trv_place" ><br>	
+		     가격(원)	
+		     <input type="text"  id="price" ><br>	
+		     일정
+		     <input type="text"  id="schedule" ><br>		     
 		  </div>
 
 	</div>
@@ -192,16 +170,19 @@ function package_list( obj){
 <button  onclick="toggle(this)">상품요약보기</button>
     <div class="detail" >
 	
-		<패키지 가격 (원)> 
 		<input id="flag" type="hidden" value="0">
 		<input id="no" type="hidden"  value="PU456"/>	 
 		 
 		 <div id="info">
-		    패키지정보
-		    <input type="text"  id="pk_name" >
-		    <input type="text"  id="price" >		     
+		     레저+투어포함 / 인기투어
+		     <input type="text"  id="pk_name" ><br>
+		     투어도시		
+		     <input type="text"  id="trv_place" ><br>	
+		     가격(원)	
+		     <input type="text"  id="price" ><br>	
+		     일정
+		     <input type="text"  id="schedule" ><br>			     
 		  </div>
-
 	
     </div>
     </li> 
@@ -209,11 +190,15 @@ function package_list( obj){
 <li><a href=" "><img src=" "><p>[얼리버드 & 슈퍼세이브] 보라카이<br>10월 31일부터 11월 13일까지 즐기는 보라카이 특별 할인 찬스!  [슈퍼세이브] 알뜰한 해외여행을 준비하는 당신을 위한 선택! 가성비 추천 상품// </p><p>여행기간 4/5/6일<br>★4.2</p></a>
 <button  onclick="toggle(this)">상품요약보기</button>
     <div class="detail" >
-        <input type="hidden" value="0">
-		   <div></div><패키지일정>
-		   <div></div>
-    </div>
-    </li> 
+       <input type="hidden" value="0">
+		   힐링+휴양 / 얼리버드
+		     <input type="text"  id="pk_name" ><br>
+		     투어도시		
+		     <input type="text"  id="trv_place" ><br>	
+		     가격(원)	
+		     <input type="text"  id="price" ><br>	
+		     일정
+		     <input type="text"  id="schedule" ><br>		
 
 </ul>
 </div>
