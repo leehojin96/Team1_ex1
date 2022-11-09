@@ -301,6 +301,18 @@ public class package_info {
 		this.ht_ad = ht_ad;
 	}
 	
+	public package_info(String pk_num, String pk_name, String schedule, String departure, String destination, int price,
+			String trv_place, String hotel_number) {
+		this.pk_num = pk_num;
+		this.pk_name = pk_name;
+		this.schedule = schedule;
+		Departure = departure;
+		Destination = destination;
+		Price = price;
+		this.trv_place = trv_place;
+		this.hotel_number = hotel_number;
+	}
+
 	@Override
 	public String toString() {
 		return "package_info [pk_num=" + pk_num + ", pk_name=" + pk_name + ", schedule=" + schedule + ", Departure="

@@ -3,6 +3,10 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="T1_Dto.Pay" %>
 <%@ page import="T1_Dto.Customer" %>
+<%@page import="T1_Dao.PackageDao"%>
+<%@page import="T1_Dao.ResDao"%>
+<%@ page import="T1_Dto.Res" %>
+<%@ page import="T1_Dto.Package" %>
 <%
 String path = request.getContextPath();
 %>
@@ -19,44 +23,28 @@ ul{ list-style: none;
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-function res_info() {
-	$.ajax(
-			{
-				type:"get",
-				 dataType:"json",              
-				 url:"/Team1_ex1/res_list123",	
-				 success: function( data, textStatus){
-					//alert(data);
-					//console.log(data);
-					let res_list  = data.result;
-					$("#res_list").empty();
-					
-					
-					for( let i=0 ; i< res_list.length; i ++){
-				    	   let res = res_list[i];
-				    	   
-					let  res_code  = res.res_code ;
-					let  pay_code  = res.pay_code ;
-					let  name  = res.name ;
-					let  eng_name  = res.eng_name ;
-					let  birth  = res.birth ;
-					let  phone  = res.phone ;
-					let  gender  = res.gender ;
-					
-				    	   //$("#res_list").append(`<li>${res.res_code} ${res.review} ${res.pay_code} ${res.name} ${res.eng_name} ${res.birth} ${res.phone} ${res.gender}</li>`);
-				      $("#res_list").append('<li>'+res_code+'	'+ pay_code+'	'+ name+'	'+ eng_name+'	'+ birth+'	'+ phone+'	'+ gender+'</li>');
-				      
-						
-				    }
-				},
-				 error: function( data, textStatus){			 
-				 },		 
-				 complete:function(data, textStatus){
-					// alert("done");
-				 }		 
-			})
-	
+function toggle(obj){  
+	// 버튼에 해당하는  li 얻어오기
+    let li  = obj.parentElement;
+ 
+	//li영역을 기준으로   detail 영역,  패키지정보영역과, flag 영역 얻어오기
+    let infoDiv  =  li.querySelector("#info");            
+    let flagTag =   li.querySelector("#flag");
+    let detail =    li.querySelector(".detail");
+    
+    //각 패키지의 상세영역 flag값 얻어오기
+    let flag = flagTag.value;            
+    if( flag ==0){            	         	
+    	//package_list();   
+        detail.style.display="block";
+        infoDiv.innerHTML="패키지명: 행복한 패키지";
+        flagTag.value=1;
+    }else{      
+        detail.style.display="none";
+        flagTag.value=0;
+    }
 }
+
 </script>
 </head>
 <body>
@@ -109,27 +97,66 @@ function res_info() {
 <tr>
 <td>결제코드</td>
 <td>아이디(이메일)</td>
-<td>패키지번호</td>
+<td>패키지명</td>
 <td>결제금액</td>
 <td>인원</td>
-<td>상세내역페이지</td>
 </tr>
-<%
-ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
-	for(Pay res : list){
-%>
-<tr>
-<td> <%= res.getPay_code()%></td>
-<td> <%= res.getId() %></td>
-<td> <a href="tourPackageInfo"><%= res.getPk_num() %></a></td>
-<td> <%= res.getPrice() %></td>
-<td> <%= res.getPersons() %></td>
-<td><input type="button" onclick="res_info()" value="예약 상세"></td>
-</tr>
-<% } %>
 
 </table>
-<ul id="res_list"></ul>
+<%
+ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
+PackageDao packagedao = new PackageDao();
+	for(Pay pay : list){
+Package pck = packagedao.package_where_pk_num(pay.getPk_num());
+%>
+<table>
+<tr>
+<td> <%= pay.getPay_code()%></td>
+<td> <%= pay.getId() %></td>
+<td> <a href="package_detail?pk_num=<%=pay.getPk_num() %>"><%= pck.getPk_name() %></a></td>
+<td> <%= pay.getPrice() %></td>
+<td> <%= pay.getPersons() %></td>
+</tr>
+</table>
+<details>
+<summary>예약자 정보 보기</summary>
+
+
+
+<%ResDao resdao = new ResDao();
+ArrayList<Res> reslist = resdao.res(pay.getPay_code());
+%>
+<table>
+<tr>
+<td>결제 코드</td>
+<td>예약 코드</td>
+<td>성명</td>
+<td>영문 성명</td>
+<td>생년월일</td>
+<td>휴대폰 번호</td>
+<td>성별</td>
+</tr>
+
+</table>
+<%
+for(Res res : reslist){
+ %>
+<table>
+<tr>
+<td><%=res.getPay_code() %></td>
+<td><%=res.getRes_code() %></td>
+<td><%=res.getName() %></td>
+<td><%=res.getEng_name() %></td>
+<td><%=res.getBirth() %></td>
+<td><%=res.getPhone() %></td>
+<td><%=res.getGender() %></td>
+</tr>
+
+</table>
+
+<%}
+%></details><%	} %>
+
 </section>
 
 <footer>

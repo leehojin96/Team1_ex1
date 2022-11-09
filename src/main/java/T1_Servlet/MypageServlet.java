@@ -37,6 +37,8 @@ public class MypageServlet extends HttpServlet{
 			CustomerService cusservice = new CustomerService(cusdao);
 			Customer customer = cusservice.cus_info_all_whereid(id);
 			
+			
+			
 			// data 심기
 			request.setAttribute("list",list);
 			request.setAttribute("customer", customer);

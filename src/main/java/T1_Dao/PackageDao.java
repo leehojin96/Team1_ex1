@@ -69,5 +69,36 @@ public class PackageDao {
 		}
 		return list;
 	}
+public Package package_where_pk_num(String input_pk_num){
+		
+		dbCon();
+		Package package1=null;
+		String sql = "select * from package_info where pk_num=?";
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, input_pk_num);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				String pk_name = rs.getString(2);
+				String schedule = rs.getString(3);
+				String departure = rs.getString(4);
+				String destination = rs.getString(5);
+				int price = rs.getInt(6);
+				String trv_place = rs.getString(7);
+				String ht_key = rs.getString(8);
+				
+				package1 = new Package(input_pk_num, pk_name, schedule, departure, destination, price, trv_place, ht_key);
+			}
+			
+			rs.close();
+			pst.close();
+			con.close();
+			
+		} catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return package1;
+	}
 
 }
