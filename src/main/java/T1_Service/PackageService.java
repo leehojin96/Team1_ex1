@@ -3,8 +3,6 @@ package T1_Service;
 import java.util.ArrayList;
 
 import T1_Dao.PackageDao;
-import T1_Dao.PayDao;
-import T1_Dto.Pay;
 
 public class PackageService {
 

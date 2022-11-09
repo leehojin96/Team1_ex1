@@ -10,10 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import T1_Dao.FlightDao;
 import T1_Dao.PackageDao;
+import T1_Dto.Flight;
+import T1_Service.FlightService;
 import T1_Service.PackageService;
-
-
 
 @WebServlet("/tourPackageInfo")
 public class PackageServlet extends HttpServlet{
@@ -29,8 +30,14 @@ public class PackageServlet extends HttpServlet{
 			PackageDao dao = new PackageDao();
 			PackageService payservice = new PackageService(dao);
 			ArrayList<T1_Dto.Package> list = payservice.packagelist();
+			
+			FlightDao flightdao = new FlightDao();
+			FlightService flightservice = new FlightService(flightdao);
+			ArrayList<Flight> flightlist = flightservice.flightlist();
+			
 			// data 심기
 			request.setAttribute("list",list);
+			request.setAttribute("flightlist",flightlist);
 			
 			request.getRequestDispatcher("WEB-INF/view/package.jsp").forward(request, response);
 		}

@@ -2,11 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="T1_Dto.Package" %>
+<%@ page import="T1_Dto.Flight" %>
 
 <%
 String path = request.getContextPath();
 %>
-<link rel="styLesheet" href="<%=path%>/css/mypage.css">
+<link rel="styLesheet" href="<%=path%>/css/mypage.css" >
 
 <!DOCTYPE html>
 <html>
@@ -63,6 +64,41 @@ ArrayList<Package> list = (ArrayList<Package>)request.getAttribute("list");
 <td> <%= res.getPrice() %></td>
 <td> <%= res.getTrv_place() %></td>
 <td> <%= res.getHt_key()%></td>
+</tr>
+<% } %>
+
+</table>
+
+<table>
+<caption>항공권 정보</caption>
+<tr>
+<td>항공편번호</td>
+<td>출발일</td>
+<td>출발시간</td>
+<td>도착일</td>
+<td>도착시간</td>
+<td>총 비행시간</td>
+<td>항공사</td>
+<td>항공사 분류</td>
+<td>출발지</td>
+<td>도착지</td>
+</tr>
+
+<%
+ArrayList<Flight> flightlist = (ArrayList<Flight>)request.getAttribute("flightlist");
+	for(Flight flight : flightlist){
+%>
+<tr>
+<td> <%= flight.getFlight_num() %></td>
+<td> <%= flight.getDep_date()%></td>
+<td> <%= flight.getDep_time() %></td>
+<td> <%= flight.getDes_date() %></td>
+<td> <%= flight.getDes_time() %></td>
+<td> <%= flight.getFlight_time() %></td>
+<td> <%= flight.getAirline() %></td>
+<td> <%= flight.getAlrline_class()%></td>
+<td> <%= flight.getDep_place()%></td>
+<td> <%= flight.getDes_place()%></td>
 </tr>
 <% } %>
 
