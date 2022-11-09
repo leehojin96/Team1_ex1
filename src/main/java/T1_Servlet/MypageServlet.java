@@ -14,7 +14,7 @@ import T1_Dao.CustomerDao;
 import T1_Dao.PayDao;
 import T1_Dto.Customer;
 import T1_Dto.Pay;
-import T1_Service.CusService;
+import T1_Service.CustomerService;
 import T1_Service.PayService;
 
 @WebServlet("/tourMypage")
@@ -32,9 +32,9 @@ public class MypageServlet extends HttpServlet{
 			PayService payservice = new PayService(dao);
 			ArrayList<Pay> list = payservice.cus_paylist(id);
 			
-			//회원정보
+			// 회원정보
 			CustomerDao cusdao = new CustomerDao();
-			CusService cusservice = new CusService(cusdao);
+			CustomerService cusservice = new CustomerService(cusdao);
 			Customer customer = cusservice.cus_info_all_whereid(id);
 			
 			// data 심기

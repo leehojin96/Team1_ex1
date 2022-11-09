@@ -14,7 +14,7 @@ import T1_Dao.CustomerDao;
 import T1_Dao.PayDao;
 import T1_Dto.Customer;
 import T1_Dto.Pay;
-import T1_Service.CusService;
+import T1_Service.CustomerService;
 import T1_Service.PayService;
 
 @WebServlet("/tourMypageUpdate")
@@ -23,26 +23,42 @@ public class MypageUpdateServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 
-		// dao  디비작업
+		// dao 디비작업
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
 		if(id != null) {
-			PayDao dao = new PayDao();
-			PayService payservice = new PayService(dao);
-			ArrayList<Pay> list = payservice.cus_paylist(id);
 			
-			//회원정보
+			// 회원정보
 			CustomerDao cusdao = new CustomerDao();
-			CusService cusservice = new CusService(cusdao);
+			CustomerService cusservice = new CustomerService(cusdao);
 			Customer customer = cusservice.cus_info_all_whereid(id);
 			
 			// data 심기
-			request.setAttribute("list",list);
 			request.setAttribute("customer", customer);
 			
 			request.getRequestDispatcher("WEB-INF/view/mypageupdate.jsp").forward(request, response);
 		}
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String new_pw = request.getParameter("new_pw");
+		String new_phone = request.getParameter("new_phone");
+		String id = request.getParameter("id");
+		
+		CustomerDao dao = new CustomerDao();
+		CustomerService service = new CustomerService(dao);
+		Customer customer = new Customer();
+		
+		customer.setPw(new_pw);
+		customer.setPhone(new_phone);
+		customer.setId(id);
+		
+		service.CustomerUpdate(customer);
+		
+		response.sendRedirect("tourMypageUpdate");
 	}
 
 }

@@ -120,6 +120,25 @@ public class CustomerDao {
 		
 	}
 	
+	public void update(Customer customer) {
+		
+		dbCon();
+		String sql = "update cus_info set pw = ?, phone = ? where id = ? ";
+		
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, customer.getPw());
+			pst.setString(2, customer.getPhone());
+			pst.setString(3, customer.getId());
+			
+			pst.executeUpdate();
+			
+		} catch (SQLException e) {	
+			e.printStackTrace();
+		}
+		
+	}
+
 	// 테스트용 메인입니다.
 	public static void main(String[] args) {
 		

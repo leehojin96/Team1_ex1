@@ -3,15 +3,15 @@ package T1_Service;
 import T1_Dao.CustomerDao;
 import T1_Dto.Customer;
 
-public class CusService {
+public class CustomerService {
 
 	CustomerDao dao;
 
-	public CusService() {
+	public CustomerService() {
 
 	}
 
-	public CusService(CustomerDao dao) {
+	public CustomerService(CustomerDao dao) {
 		this.dao = dao;
 	}
 
@@ -26,7 +26,10 @@ public class CusService {
 
 	public Customer cus_info_all_whereid(String loginid) {
 		Customer customer = dao.cus_info_all_whereid(loginid);
-
 		return customer;
+	}
+	
+	public void CustomerUpdate(Customer customer) {
+		dao.update(customer);
 	}
 }
