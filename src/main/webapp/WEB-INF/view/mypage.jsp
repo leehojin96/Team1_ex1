@@ -24,7 +24,7 @@ function res_info() {
 			{
 				type:"get",
 				 dataType:"json",              
-				 url:"/team1_ex2/res_list",	
+				 url:"/Team1_ex1/res_list123",	
 				 success: function( data, textStatus){
 					//alert(data);
 					//console.log(data);
