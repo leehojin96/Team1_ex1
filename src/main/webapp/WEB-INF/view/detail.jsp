@@ -15,7 +15,7 @@
 
 <%String id = (String)session.getAttribute("id");%>
 <header>
-<h2>AcornTourMypage</h2>
+<h2>AcornTourPackageDetail</h2>
 </header>
 
 <nav>
