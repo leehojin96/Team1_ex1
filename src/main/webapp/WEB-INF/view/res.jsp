@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="T1_Dto.package_info" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 
 <%String path = request.getContextPath();%>
 <script src="<%=path %>/js/res.js"></script>
@@ -12,6 +14,8 @@
 
 </head>
 <body>
+
+<% String price= (String)request.getAttribute("price");%>
 
 <%String id = (String)session.getAttribute("id");%>
 <header>
@@ -92,7 +96,7 @@
 	
 	<tr>
 		<th>총 상품금액</th>
-		<td> ~~원</td>
+		<td>가격 : <%=price%> 원</td>
 	</tr>
 	
 	<tr>	

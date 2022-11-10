@@ -51,7 +51,7 @@
 <td>가격 : <%=tour.getPrice()%> ~부터</td>
 <td>여행지 : <%=tour.getTrv_place()%> </td>	
 <td>호텔예약번호 : <%=tour.getHotel_number()%></td>
-<td><button onclick="location.href='reservation'")>예약하기</button> </td>
+<td><button onclick="location.href='reservation?price=<%=tour.getPrice()%>'">예약하기</button> </td>
 </tr>
 
 </table>

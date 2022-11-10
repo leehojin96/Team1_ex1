@@ -14,9 +14,14 @@ public class ReservationServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		String price = request.getParameter("price");
+		System.out.println( "price=" + price);
+		request.setAttribute("price", price);
 		request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);
 		System.out.println("가져와요");
 	}
+	
+	
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
