@@ -1,5 +1,4 @@
 function join(){
-	// alert("가입이 완료되었습니다.");
 	let frm = document.joinfrm;
 	let name = frm.name;
 	let id = frm.id;
@@ -35,7 +34,5 @@ function join(){
 		gender.focus();
 	}else{
 		frm.submit();
-		alert("가입이 완료되었습니다.");
-		window.location.href='mainIndex';
 	}
 }

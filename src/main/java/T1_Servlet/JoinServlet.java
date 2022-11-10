@@ -27,7 +27,7 @@ public class JoinServlet extends HttpServlet{
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		System.out.print("post성공");
 		// 넘어온 데이터 가져오기
 		request.setCharacterEncoding("UTF-8");
 		
@@ -52,7 +52,6 @@ public class JoinServlet extends HttpServlet{
 		 
 		response.sendRedirect("tourLogin");
 		
-		request.getRequestDispatcher("WEB-INF/view/login.jsp").forward(request, response);
 		
 	}
 }
