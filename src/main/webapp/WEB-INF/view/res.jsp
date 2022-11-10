@@ -11,7 +11,29 @@
 <%String path = request.getContextPath();%>
 <script src="<%=path %>/js/res.js"></script>
 <link rel="styLesheet" href="<%=path%>/css/res.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function abc(obj) {
+	let body = obj.parentElement;
+	let select = body.querySelector("#persons");
+	let option = select.value;
+	$.ajax({
+			type:"get",
+		 dataType:"json",
+		 data:{ option : option } ,
+		 url:"/Team1_ex4/resperson.do",
+		 success: function( data, textStatus){
+			 console.log("ajax success");
+		 },
+		 error: function( data, textStatus){			 
+		 },		 
+		 complete:function(data, textStatus){
+			 console.log("ajax complete");
+		 }	 
+	});
+	
+}
+</script>
 </head>
 <body>
 
@@ -72,7 +94,7 @@
 	<tr>
 		<th>인원</th>
 		<td>
-			<select name="persons">
+			<select id="persons" name="persons" onchange="abc(this)">
 					<option value="">선택하세요</option>
 					<option value="1">1인</option>
 					<option value="2">2인</option>
