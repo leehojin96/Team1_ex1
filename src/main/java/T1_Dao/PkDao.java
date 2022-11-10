@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import T1_Dto.package_info;
 
@@ -32,13 +31,17 @@ public class PkDao {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}	
-		}
+	}
 		
-		// 패키지 1개 조회
+	// 패키지 1개 조회
 	public package_info pk(String pk_num) {
 			
 		dbCon();
-		String sql = "select * from package_info p join flight_info f on p.departure = f.flight_num join flight_info f on p.destination = f.flight_num join hotel_info h on p.hotel_number = h.ht_key where pk_num = ?"; 
+		String sql = " select pk_num,pk_name,schedule,departure,destination,price,trv_place,hotel_number, ";
+		sql += " f.flight_num,to_char(f.dep_date, 'yyyy-mm-dd dy'),f.DEP_TIME,to_char(f.des_date, 'yyyy-mm-dd dy'),f.DES_TIME,f.FLIGHT_TIME,f.AIRLINE,f.ALRLINE_CLASS,f.DEP_PLACE,f.DES_PLACE, ";
+		sql += " l.FLIGHT_NUM,to_char(l.dep_date, 'yyyy-mm-dd dy'),l.DEP_TIME,to_char(l.des_date, 'yyyy-mm-dd dy'),l.DES_TIME,l.FLIGHT_TIME,l.AIRLINE,l.ALRLINE_CLASS,l.DEP_PLACE,l.DES_PLACE, ";
+		sql += " h.HT_KEY,h.HT_NAME,h.HT_AD,h.ROOM_TYPE,h.CHECK_TIME,h.AMENITIES,h.HT_OFFERS";
+		sql += " from package_info p join flight_info f on p.departure = f.flight_num join flight_info l on p.destination = l.flight_num join hotel_info h on p.hotel_number = h.ht_key where pk_num = ? ";
 		package_info pk = null;
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
@@ -46,6 +49,7 @@ public class PkDao {
 			ResultSet  rs= pst.executeQuery();
 
 			if(rs.next()) {
+				// package_info
 				String pk_name = rs.getString(2);
 				String schedule = rs.getString(3);
 				String Departure = rs.getString(4);
@@ -53,7 +57,8 @@ public class PkDao {
 				int Price = rs.getInt(6);
 				String trv_place = rs.getString(7);
 				String hotel_number = rs.getString(8);
-
+				
+				// 출국항공편
 				String flight_num = rs.getString(9);
 				String dep_date = rs.getString(10);
 				String dep_time = rs.getString(11);
@@ -64,7 +69,8 @@ public class PkDao {
 				String alrline_class = rs.getString(16);
 				String dep_place = rs.getString(17);
 				String des_place = rs.getString(18);
-					
+
+				// 입국항공편
 				String flight_num1 = rs.getString(19);
 				String dep_date1 = rs.getString(20);
 				String dep_time1 = rs.getString(21);
@@ -76,6 +82,7 @@ public class PkDao {
 				String dep_place1 = rs.getString(27);
 				String des_place1 = rs.getString(28);
 
+				// 호텔예약
 				String ht_key = rs.getString(29);
 				String ht_name = rs.getString(30);
 				String ht_ad = rs.getString(31);
@@ -98,10 +105,10 @@ public class PkDao {
 	}
 	
 	// 테스트용 메인입니다.
-		public static void main(String[] args) {
-			PkDao dao = new PkDao();
-			package_info result = dao.pk(null);
-			System.out.println(result + "정상작동");	
-		}
-			
+	public static void main(String[] args) {
+		PkDao dao = new PkDao();
+		package_info result = dao.pk(null);
+		System.out.println(result + "정상작동");	
 	}
+		
+}

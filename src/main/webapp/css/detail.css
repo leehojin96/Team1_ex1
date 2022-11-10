@@ -1,8 +1,77 @@
 @charset "UTF-8";
 
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrap{
+	padding-top : 30px;
+	width : 1200px;
+	margin: 0 auto;
+}
+
+.detail_head{
+	display: flex;
+	height: 300px;
+	margin-bottom: 30px;
+}
+
+.detail_head_1{
+	margin-right: 20px;
+}
+
+.pk_name{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.detail_head_2 p{
+	margin : 5px 0px 5px 0px;
+	padding : 9px 7px 9px 7px;
+	border: 1px solid coral;
+	display: block;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.detail_head tr:nth-child(1) {
+	height: 50px;
+}
+
+.detail_head tr:nth-child(2) {
+	height: 100px;
+}
+
+.detail_head td{
+	border: 1px solid coral;
+	padding : 10px;
+	width: 100px;
+	text-align:center;
+	font-size: 15px;
+}
+
+.detail_head td:nth-child(1){
+	border: 1px solid coral;
+	width: 300px;
+	text-align:center;
+	font-size: 15px;
+}
+
+
+.detail_head td:nth-child(3){
+	width: 150px;
+}
+
+img{
+	width: 500px;
+	height: 300px;
+}
+
 table{
 	border: 1px solid coral;
 	border-collapse: collapse;
+	text-align: center;
 }
 
 caption{
@@ -15,7 +84,6 @@ td{
 	border: 1px solid coral;
 	width: 150px;
 	text-align:center;
-	font-size: 15px;
 }
 
 tr:nth-child(1) {
@@ -24,4 +92,36 @@ tr:nth-child(1) {
 
 a{
 	color: red;
+}
+
+button{
+	width: 100%;
+	height: 95px;
+	font-size: 35px;
+	font-family: sans-serif;
+	font-weight: bold;
+	border: 1px solid coral;
+	border-radius: 5px;
+	background-color: #cee5d5;
+}
+
+.flight_info{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.flight_info td{
+	padding : 3px;
+	margin-bottom: 30px;
+	font-size: 15px;
+}
+
+.hotel_info td{
+	padding : 5px;
+	width: 200px;
+	font-size: 15px;
+}
+
+.hr_1{
+	border : 1px solid grey;
 }
