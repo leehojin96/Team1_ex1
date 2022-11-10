@@ -52,16 +52,17 @@ AcornTourReservation
 <nav>
 <div  class="nav">
 <%if(id == null){ %>
-
-<a href="package_list">홈으로</a>
-<a href="tourJoin">회원가입</a>
-<a href="tourLogin">로그인</a>
+|
+<a href="package_list">홈으로</a>|
+<a href="tourJoin">회원가입</a>|
+<a href="tourLogin">로그인</a>|
 <%} %>
 <%if(id != null){ %>
-
-<a href="package_list">홈으로</a>
-<a href="tourMypage">마이페이지</a>
-<a href="logout">로그아웃</a>
+|
+<a href="package_list">홈으로</a> |
+<a href="tourMypage">마이페이지</a> |
+<a href="tourMypageUpdate">회원정보수정</a> |
+<a href="logout">로그아웃</a> |
 <%} %>
 </div>
 </nav>
