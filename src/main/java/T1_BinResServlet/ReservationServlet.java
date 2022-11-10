@@ -40,7 +40,7 @@ public class ReservationServlet extends HttpServlet {
 		ResCustomerService service = new ResCustomerService(dao);		
 		service.insert(c);
 		
-		response.sendRedirect("paypage");
+		response.sendRedirect("tourMypage");
 		
 		//데이터 insert 후 보낼 페이지
 		//request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);

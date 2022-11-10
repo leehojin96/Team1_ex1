@@ -43,13 +43,11 @@ function toggle(obj){
         flagTag.value=0;
     }
 }
-
 </script>
 </head>
 <body>
- <%
-    String id = (String)session.getAttribute("id");
-    %>
+
+<%String id = (String)session.getAttribute("id");%>
 <header>
 <h2>AcornTourMypage</h2>
 </header>
