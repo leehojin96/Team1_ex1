@@ -145,7 +145,7 @@ function toggle(obj){
 	</div>
 </li> 
 
-<li><a href="tourPackageInfo?pk_num=PA987"><img src=" "><p>[마감임박!!] 로스앤젤레스 관광<br>12월 10일부터 12월 17일일까지 미주여행 고민중이라면! [슈퍼세이브] 가족단위 추천 상품// </p><p>여행기간 8일<br>★4.5</p></a>
+<li><a href="package_detail?pk_num=PA987"><img src=" "><p>[마감임박!!] 로스앤젤레스 관광<br>12월 10일부터 12월 17일일까지 미주여행 고민중이라면! [슈퍼세이브] 가족단위 추천 상품// </p><p>여행기간 8일<br>★4.5</p></a>
 <button  onclick="toggle(this)">상품요약보기</button>
 	<div  class="detail">
 	
@@ -166,7 +166,7 @@ function toggle(obj){
 	</div>
 </li> 
 
-<li><a href=" package_detail?pk_num=PU456 "><img src=" "><p>[크리스마스 마켓투어포함] 영국 런던 깊이보기<br>12월 25일부터 12월 31일까지 크리스마스부터 연말분위기 유럽감성찬스!  [추천도1위] 크리스마스를 느끼고 싶은 당신을 위한 선택!// </p><p>여행기간 6박7일<br>★4.7</p></a>
+<li><a href="package_detail?pk_num=PU456 "><img src=" "><p>[크리스마스 마켓투어포함] 영국 런던 깊이보기<br>12월 25일부터 12월 31일까지 크리스마스부터 연말분위기 유럽감성찬스!  [추천도1위] 크리스마스를 느끼고 싶은 당신을 위한 선택!// </p><p>여행기간 6박7일<br>★4.7</p></a>
 <button  onclick="toggle(this)">상품요약보기</button>
     <div class="detail" >
 	

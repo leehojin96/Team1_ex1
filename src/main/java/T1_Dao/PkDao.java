@@ -35,7 +35,7 @@ public class PkDao {
 		}
 		
 		// 패키지 1개 조회
-	public package_info pk_where_pk_num(String pk_num) {
+	public package_info pk(String pk_num) {
 			
 		dbCon();
 		String sql = "select * from package_info p join flight_info f on p.departure = f.flight_num join flight_info f on p.destination = f.flight_num join hotel_info h on p.hotel_number = h.ht_key where pk_num = ?"; 
@@ -46,7 +46,6 @@ public class PkDao {
 			ResultSet  rs= pst.executeQuery();
 
 			if(rs.next()) {
-				String pk_num1 = rs.getString(1);
 				String pk_name = rs.getString(2);
 				String schedule = rs.getString(3);
 				String Departure = rs.getString(4);
@@ -99,10 +98,10 @@ public class PkDao {
 	}
 	
 	// 테스트용 메인입니다.
-	public static void main(String[] args) {
-		PkDao dao = new PkDao();
-		package_info result = dao.pk_where_pk_num(null);
-		System.out.println(result + "정상작동");	
+		public static void main(String[] args) {
+			PkDao dao = new PkDao();
+			package_info result = dao.pk(null);
+			System.out.println(result + "정상작동");	
+		}
+			
 	}
-		
-}
