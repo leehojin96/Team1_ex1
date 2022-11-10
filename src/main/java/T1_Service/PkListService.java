@@ -25,7 +25,7 @@ public class PkListService {
 		no = "Pj123";
 		no = "PA987";
 		no= "PU456";
-		package_info pk = pkdao.pk_where_pk_num(no);		
+		package_info pk = pkdao.pk(no);		
 		//JSONArray jArray = new JSONArray();
 		
 		JSONObject json = new JSONObject();
@@ -45,7 +45,7 @@ public class PkListService {
 	//상세페이지위한 메서드 (패키지인포하나만 반환)
 	public package_info getdetailPk(String pk_num) {
 		
-		package_info info = pkdao.pk_where_pk_num(pk_num);
+		package_info info = pkdao.pk(pk_num);
 		return info;
 
 	}
