@@ -7,9 +7,8 @@
 <%@page import="T1_Dao.ResDao"%>
 <%@ page import="T1_Dto.Res" %>
 <%@ page import="T1_Dto.Package" %>
-<%
-String path = request.getContextPath();
-%>
+
+<%String path = request.getContextPath();%>
 <link rel="styLesheet" href="<%=path%>/css/mypage.css">
 
 <!DOCTYPE html>

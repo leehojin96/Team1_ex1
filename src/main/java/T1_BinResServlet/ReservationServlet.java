@@ -13,15 +13,10 @@ public class ReservationServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		
-		
+
 		request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);
 		System.out.println("가져와요");
 	}
-	
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,9 +32,7 @@ public class ReservationServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String gender = request.getParameter("gender");
 		
-		
 		System.out.println("제발아아앙");
-		
 		
 		ResCustomerDao dao = new ResCustomerDao();
 		ResCustomer c = new ResCustomer("10", "임의로넣음",name,eng_name, birth, phone,gender);		
@@ -51,16 +44,7 @@ public class ReservationServlet extends HttpServlet {
 		
 		//데이터 insert 후 보낼 페이지
 		//request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);
-		
-		
+			
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

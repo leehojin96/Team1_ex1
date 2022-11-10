@@ -312,9 +312,9 @@ public class package_info {
 				+ ht_name + ", ht_ad=" + ht_ad + ", room_type=" + room_type + ", check_time=" + check_time
 				+ ", amenities=" + amenities + ", ht_offers=" + ht_offers + "]";
 	}
-	public package_info(String pk_num) {
+	public package_info(String pk_where_pk_num) {
 		super();
-		this.pk_num = pk_num;
+		this.pk_num = pk_where_pk_num;
 	}
 	
 }

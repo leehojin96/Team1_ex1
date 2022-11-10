@@ -23,8 +23,7 @@ public class PkController extends HttpServlet{
 		 response.setCharacterEncoding("UTF-8");	
 		 response.setContentType("text/plain;charset=utf-8");
 		
-		
-		//패키지번호 얻어옹기
+		//패키지번호 얻어오기
 		 String no = request.getParameter("no");
 		 System.out.println( "no = " + no);
 		 
