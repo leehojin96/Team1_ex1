@@ -26,15 +26,29 @@ header{
 }
 
 footer{
+	/*
  	padding-left :20%;
  	margin :0px auto;
  	height: 60px;
+ 	*/
+ 	
+ 	width: 1000px;
+ 	margin: auto;
   	
 }
-.divFT {display: flex;}
+.divFT {
+	display: flex;
+	padding : auto;
+	border-top: 0.5px solid black;
+	
+	
+}
 .divF{
 	font-size: 12px;
 	color: gray;
+	margin: auto;
+	
+	
 }
 .p_footer { 
 	font-size: 12px;
@@ -46,13 +60,15 @@ a{
  }
  ul{
  list-style: none;
- border-top: 0.5px solid black;
+ width: 100%;
+ 
  }
  
  section{
  margin: auto;
  width: 1000px;
  padding : auto;
- 
+ height: 1000px;
  
  }
+ 

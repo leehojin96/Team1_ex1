@@ -13,6 +13,7 @@
 </head>
 
 <link rel="styLesheet" href="<%=path%>/css/header_footer.css">
+<link rel="styLesheet" href="<%=path%>/css/join.css">
 <body>
  <%
     String id = (String)session.getAttribute("id");
@@ -59,8 +60,8 @@ AcornTourJoin
 		<td><input type="text" name = "birth" placeholder="ex) 990101-1234567"></td>
 	</tr>
 <tr><td>성별</td><td><input type="radio" name = "gender" value="남">남<input type="radio" name = "gender">여</td></tr>
-<tr colspan="2">
-<td>
+<tr >
+<td colspan="2">
 <button type="button" onclick="join()">가입하기</button>
 <button type="button" onclick="location.href='mainIndex'">가입취소</button>
 </td>

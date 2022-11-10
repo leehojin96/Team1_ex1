@@ -64,8 +64,10 @@ AcornTourLogin
 
 </section>
 
-	<footer>
+<footer>
 <div class ="divFT">
+
+
 <div class ="divF">
 <ul>
 <li>회사소개</li>
@@ -77,6 +79,7 @@ AcornTourLogin
 <li>공식인증예액센터 검색</li>
 </ul>
 </div>
+
 <div class ="divF">
 <ul>
 <li>(주)하나투어</li>
@@ -102,7 +105,9 @@ AcornTourLogin
 <li>팩스02-734-0312<br></li>
 </ul>
 </div>
+
 </div>
+
 <p class="p_footer">
 ※ 부득이한 사정에 의해 여행일정이 변경되는 경우 사전 동의를 받습니다.<br>
 ※ 하나투어는 개별 항공권, 단품 및 일부 여행상품에 대하여 통신판매중개자로서 통신판매의 당사자가 아니며 해당상품의 거래정보 및 거래등에 대해 책임을 지지 않습니다.<br>
