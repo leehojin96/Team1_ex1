@@ -22,3 +22,7 @@ div{
 	width : 200px;
 	margin-top : 20px;
 }
+span{
+	font-size: 5px;
+	color: red;
+}

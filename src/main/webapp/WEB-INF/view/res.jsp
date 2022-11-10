@@ -59,8 +59,14 @@
 		<input type="radio" name = "gender" value ="여">여
 		</td>
 	</tr>
+	
+</table>
+
+<table>
+	<caption><h3>최종결제금액</h3></caption>
+	
 	<tr>
-		<th>인원 선택</th>
+		<th>인원</th>
 		<td>
 			<select name="persons">
 					<option value="">선택하세요</option>
@@ -77,19 +83,10 @@
 				</select>
 		</td>
 	</tr>
-</table>
-
-<table>
-	<caption><h3>최종결제금액</h3></caption>
-	
-	<tr>
-		<th>인원</th>
-		<td> ???명 </td>
-	</tr>
 	
 	<tr>
 		<td colspan ="2">
-		유류할증료&제세공과금 포함
+		<span>유류할증료&제세공과금 포함</span>
 		</td>
 	</tr>
 	
