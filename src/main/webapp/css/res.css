@@ -16,7 +16,7 @@ button{
 *{
 	text-align: left;
 }
-div{
+.pay_btn{
 	display: flex;
 	margin : auto;
 	width : 200px;
