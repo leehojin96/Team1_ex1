@@ -46,6 +46,10 @@ public class ReservationServlet extends HttpServlet {
 		String price = request.getParameter("price");
 		String persons = request.getParameter("persopns");
 		
+		System.out.print(id);
+		System.out.print(pk_num);
+		System.out.print(price);
+		System.out.print(persons);
 		
 		Pay pay = new Pay(id, pk_num, Integer.valueOf(price), Integer.valueOf(persons));
 		PayDao paydao = new PayDao();
