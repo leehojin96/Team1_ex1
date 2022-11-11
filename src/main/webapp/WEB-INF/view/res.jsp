@@ -51,7 +51,7 @@ function abc() {
 			</tr>
 			<tr>
 			<th>성별</th>
-			<td><select onchange="test(this)" id="gender">
+			<td><select onchange="test(this)" id="gender" class = "box">
 					<option value="">선택</option>
 					<option value="남">남</option>
 					<option value="여">여</option>
@@ -142,7 +142,7 @@ function test(obj){
 	</tr>
 	<tr>
 					<th>성별</th>
-					<td><select onchange="test(this)" id="gender">
+					<td><select onchange="test(this)" id="gender" class = "box">
 							<option value="">선택</option>
 							<option value="남">남</option>
 							<option value="여">여</option>
