@@ -25,14 +25,16 @@ public class PkController extends HttpServlet{
 		
 		//패키지번호 얻어오기
 		 String no = request.getParameter("no");
-		 System.out.println( "no = " + no);
+		 System.out.println( " 패키지 no = " + no);
 		 
-		PkDao dao = new PkDao();
-		 
+		PkDao dao = new PkDao();		 
 		PkListService service = new PkListService(); // <==패키지목록다오(sql불러오기전)에 꼭 붙여넣기
 		service.setPkDao(dao) ;		
 		
-	    String result = service.getListPk(no);
+		
+		//no="Pj123";
+	    String result = service.getListPk(no);	    
+	    System.out.println(  result);	    
 	    response.getWriter().print(result); //페이지 이동없이데이터만 변경(html)
 		
 	    //페이지이동

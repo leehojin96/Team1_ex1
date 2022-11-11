@@ -21,12 +21,9 @@ public class PkListService {
 	//서비스이므로 public, 패키지상품목록을 서비스 할 것 
 	public String getListPk(String no){
 		
-		PkDao dao = new PkDao();
-		no = "Pj123";
-		no = "PA987";
-		no= "PU456";
 		package_info pk = pkdao.pk(no);		
-		//JSONArray jArray = new JSONArray();
+	 
+		System.out.println(  pk);
 		
 		JSONObject json = new JSONObject();
 		json.put("pk_num", pk.getPk_num());
@@ -36,7 +33,7 @@ public class PkListService {
 		json.put("destination",pk.getDestination());
 		json.put("price" , pk.getPrice());
 		json.put("trv_place",pk.getTrv_place());
-		json.put("ht_key",pk.getHt_key());
+		json.put("hotel_number",pk.getHotel_number());
 					 
 		//response.getWriter().print( result); 페이지 이동없이데이터만 변경
 		return json.toString();
@@ -48,6 +45,14 @@ public class PkListService {
 		package_info info = pkdao.pk(pk_num);
 		return info;
 
+	}
+	
+	public static void main( String[]args) {
+		PkListService  service = new PkListService();
+		PkDao dao = new PkDao();
+		service.setPkDao(dao);
+		String result  = service.getListPk("Pj123");
+		System.out.println(  result );
 	}
 	
 }	

@@ -107,7 +107,7 @@ public class PkDao {
 	// 테스트용 메인입니다.
 	public static void main(String[] args) {
 		PkDao dao = new PkDao();
-		package_info result = dao.pk(null);
+		package_info result = dao.pk("Pj123");
 		System.out.println(result + "정상작동");	
 	}
 		

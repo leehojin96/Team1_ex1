@@ -5,6 +5,31 @@
 	padding: 0px;
 }
 
+header{
+	font-weight: bold;
+    background-color: #bec6bb;
+    font-size: 30px;
+    color: white;
+}
+.h_wrap{
+	width: 100%;
+	display: flex;
+	text-align : center;
+}
+
+.title{
+	margin-left: 40px;
+	font-size : 30px;
+	color: white;
+}
+.nav{
+	padding-right: 10px;
+	font-size : 15px;
+	position: absolute;
+	right : 300px;
+	top: 20px;
+}
+
 .wrap{
 	padding-top : 30px;
 	width : 1200px;

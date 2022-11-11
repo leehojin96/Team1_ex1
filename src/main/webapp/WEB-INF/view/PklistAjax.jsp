@@ -33,13 +33,15 @@ function package_list( obj){
 let li  = obj.parentElement;	
 let noTag  = li.querySelector("#no");
 let no =  noTag.value;
-//alert( no);
+
+
+alert("no ; " +  no);
 $.ajax(
 		{
 			 type:"get",
 			 dataType:"json",
 			 data:{ no : no} ,
-			 url:"/tour_pk/package_list.do",	    
+			 url:"/Team1_ex1/package_list.do",	    
 			 success: function( data, textStatus){
 		        console.log( data);	  //콘솔에서 json 데이터 확인하기 			        
 		        let pk_name = data.pk_name;
@@ -90,21 +92,16 @@ function toggle(obj){
     }
 }
 
-
 </script>
-
 
 </head>
 <body>
- <%
-    String id = (String)session.getAttribute("id");
-    %>
+
+<%String id = (String)session.getAttribute("id");%>
     
 <header>
 <div class = "h_wrap">
-<div class= "title">
-AcornTour
-</div>	
+<div class= "title">AcornTour</div>	
 
 <nav>
 <div  class="nav">
@@ -127,9 +124,9 @@ AcornTour
 </header>
 
 	
-	<div>
-	<p id="id">고객님만을 위한 추천 패키지여행</p> 	
-	<section>
+<div><p id="id">고객님만을 위한 추천 패키지여행</p>
+
+<section>
 	
 <h3>아시아/유럽/미주</h3>
 <div class="wrap"> 
