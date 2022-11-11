@@ -1,6 +1,7 @@
 package T1_Servlet;
 
 import java.io.IOException;
+import java.lang.ProcessHandle.Info;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,13 +46,14 @@ public class ReservationServlet extends HttpServlet {
 		String pk_num  = request.getParameter("pk_num_h");
 		String price = request.getParameter("price_h");
 		String persons = request.getParameter("persons");
+		Integer totalprice = Integer.valueOf(price)*Integer.valueOf(persons);
 		
 		System.out.print(id);
 		System.out.print(pk_num);
 		System.out.print(price);
 		System.out.print(persons);
 		
-		Pay pay = new Pay(id, pk_num, Integer.valueOf(price), Integer.valueOf(persons));
+		Pay pay = new Pay(id, pk_num, totalprice, Integer.valueOf(persons));
 		System.out.print(pay);
 		
 		

@@ -21,12 +21,12 @@ function abc() {
 	
 	let select = document.querySelector("#persons");
 	let option = select.value;
-	alert(option);
+	//alert(option);
 	//인원수 
 	
 	let input1 = document.querySelector("#price");
 	let price = input1.value;
-	alert(price);
+	//alert(price);
 	
 	
 	let input2 = document.querySelector("#totalprice");
@@ -159,7 +159,6 @@ function test(obj){
 		<th>인원</th>
 		<td>
 			<select id="persons" name="persons" onchange="abc()">
-					<option value="">선택하세요</option>
 					<option value="1">1인</option>
 					<option value="2">2인</option>
 					<option value="3">3인</option>

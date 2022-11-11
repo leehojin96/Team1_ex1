@@ -10,13 +10,13 @@ function check(){
 	let birth = frm.birth;
 	let phone = frm.phone;
 	let gender = frm.gender;
-	
+	*/
 	let chk1 = frm.chk1;
 	let chk2 = frm.chk2;
 	let chk3 = frm.chk3;
 	let chk4 = frm.chk4;
 	let chk5 = frm.chk5;
-	
+	/*
 	if(name.value ==""){
 		alert("이름을 입력하세요.");
 		name.focus();
@@ -33,6 +33,7 @@ function check(){
 		alert("성별을 입력하세요.");
 		gender.focus();
 	}
+	*/
 	if(chk1.value ==""){
 		alert("약관동의를 해주세요.");
 		
@@ -49,7 +50,7 @@ function check(){
 		alert("약관동의를 해주세요.");
 		
 	}else{
-	}
-	*/
 		frm.submit();
+	}
+	
 }

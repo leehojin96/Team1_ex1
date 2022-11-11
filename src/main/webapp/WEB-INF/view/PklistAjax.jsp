@@ -64,7 +64,6 @@ $.ajax(
 			error: function( data, textStatus){			 
 			},		 
 			complete:function(data, textStatus){
-				alert("여행을 떠나요");
 			 	}
 			}
 	 	);
