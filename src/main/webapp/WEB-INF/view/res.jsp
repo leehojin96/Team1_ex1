@@ -38,16 +38,16 @@ function abc() {
 			<caption><h1>예약자 정보</h1></caption>
 
 			<tr>
-				<th>성함</th><td><input type = "text" id="name" name ="name" Placeholder=""></td>
+				<th>성함</th><td><input class = "box" type = "text" id="name" name ="name" Placeholder=""></td>
 			</tr>
 			<tr>
-				<th>영문이름</th><td><input type = "text" id="eng_name" name ="eng_name" Placeholder="ex) LimYoungbin"></td>
+				<th>영문이름</th><td><input class = "box" type = "text" id="eng_name" name ="eng_name" Placeholder="ex) LimYoungbin"></td>
 			</tr>
 			<tr>
-				<th>생년월일</th><td><input type = "text" id="birth" name ="birth" Placeholder="ex) 981125"></td>
+				<th>생년월일</th><td><input class = "box" type = "text" id="birth" name ="birth" Placeholder="ex) 981125"></td>
 			</tr>
 			<tr>
-				<th>휴대폰번호</th><td><input type = "text" id="phone" name ="phone" Placeholder="ex) 010-7143-7327"></td>
+				<th>휴대폰번호</th><td><input class = "box" type = "text" id="phone" name ="phone" Placeholder="ex) 010-7143-7327"></td>
 			</tr>
 			<tr>
 			<th>성별</th>
