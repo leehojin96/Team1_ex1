@@ -5,19 +5,19 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-import T1_Dao.ResDao;
+import T1_Dao.ResCustomerDao;
 import T1_Dto.ResCustomer;
 
 public class ResService {
-	ResDao resdao;
+	ResCustomerDao resdao;
 
 	public ResService() {
 	}
 
-	public ResService(ResDao resdao) {
+	public ResService(ResCustomerDao resdao) {
 		this.resdao = resdao;
 	}
-	public void setResDao(ResDao resdao) {
+	public void setResDao(ResCustomerDao resdao) {
 		this.resdao = resdao;
 	}
 	
@@ -42,7 +42,7 @@ public class ResService {
 		return result.toString();
 	}
 	public static void main(String[]args) {
-		ResDao resdao = new ResDao();
+		ResCustomerDao resdao = new ResCustomerDao();
 		ResService resservice = new ResService(resdao);
 		
 		String st = resservice.getResList("tuy765@naver.com");

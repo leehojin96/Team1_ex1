@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import T1_Dto.ResCustomer;
 
@@ -62,8 +63,6 @@ public class ResCustomerDao {
 		}
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		ResCustomerDao  c = new ResCustomerDao();
 		ResCustomer cu = new ResCustomer( "dkdk","asdf","aaa","aaa",10,"aaa","aaa");
@@ -71,5 +70,40 @@ public class ResCustomerDao {
 		
 	}
 	
-	
+	public ArrayList<ResCustomer> res(String login_pay_code){
+		ArrayList<ResCustomer> list = new ArrayList<>();
+		dbCon();
+		String sql = "select * from res_info where pay_code=?";
+		
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, login_pay_code);
+			ResultSet rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				
+				String res_code = rs.getString(1);
+				String pay_code = rs.getString(2);
+				String name = rs.getString(3);
+				String eng_name = rs.getString(4);
+				int birth = rs.getInt(5);
+				String phone = rs.getString(6);
+				String gender = rs.getString(7);
+				ResCustomer res = new ResCustomer(res_code,pay_code,name,eng_name,birth,phone,gender);
+				list.add(res);
+				
+			}
+			
+			rs.close();
+			pst.close();
+			con.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+		
+	}
 }

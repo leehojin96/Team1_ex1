@@ -5,8 +5,7 @@
 <%@ page import="T1_Dto.Pay" %>
 <%@ page import="T1_Dto.Customer" %>
 <%@page import="T1_Dao.PkDao"%>
-<%@page import="T1_Dao.ResDao"%>
-<%@ page import="T1_Dto.Res" %>
+<%@page import="T1_Dao.ResCustomerDao"%>
 <%@ page import="T1_Dto.Package" %>
 
 <%String path = request.getContextPath();%>
@@ -129,7 +128,7 @@ Package pk = pkdao.package_where_pk_num(pay.getPk_num());
 <summary>예약자 정보 보기</summary>
 
 <%
-ResDao resdao = new ResDao();
+ResCustomerDao resdao = new ResCustomerDao();
 ArrayList<ResCustomer> reslist = resdao.res(pay.getPay_code());
 %>
 
