@@ -40,7 +40,7 @@ public class PkDao {
 	public package_info pk(String pk_num) {
 			
 		dbCon();
-		String sql = " select pk_num,pk_name,schedule,departure,destination,price,trv_place,hotel_number, ";
+		String sql = " select pk_num,pk_name,schedule,departure,destination,price,trv_place,hotel_number,pk_imgfile, ";
 		sql += " f.flight_num,to_char(f.dep_date, 'yyyy-mm-dd dy'),f.DEP_TIME,to_char(f.des_date, 'yyyy-mm-dd dy'),f.DES_TIME,f.FLIGHT_TIME,f.AIRLINE,f.ALRLINE_CLASS,f.DEP_PLACE,f.DES_PLACE, ";
 		sql += " l.FLIGHT_NUM,to_char(l.dep_date, 'yyyy-mm-dd dy'),l.DEP_TIME,to_char(l.des_date, 'yyyy-mm-dd dy'),l.DES_TIME,l.FLIGHT_TIME,l.AIRLINE,l.ALRLINE_CLASS,l.DEP_PLACE,l.DES_PLACE, ";
 		sql += " h.HT_KEY,h.HT_NAME,h.HT_AD,h.ROOM_TYPE,h.CHECK_TIME,h.AMENITIES,h.HT_OFFERS";
@@ -60,41 +60,42 @@ public class PkDao {
 				int Price = rs.getInt(6);
 				String trv_place = rs.getString(7);
 				String hotel_number = rs.getString(8);
+				String pk_imgfile = rs.getString(9);
 				
 				// 출국항공편
-				String flight_num = rs.getString(9);
-				String dep_date = rs.getString(10);
-				String dep_time = rs.getString(11);
-				String des_date = rs.getString(12);
-				String des_time = rs.getString(13);
-				String flight_time = rs.getString(14);
-				String airline = rs.getString(15);
-				String alrline_class = rs.getString(16);
-				String dep_place = rs.getString(17);
-				String des_place = rs.getString(18);
+				String flight_num = rs.getString(10);
+				String dep_date = rs.getString(11);
+				String dep_time = rs.getString(12);
+				String des_date = rs.getString(13);
+				String des_time = rs.getString(14);
+				String flight_time = rs.getString(15);
+				String airline = rs.getString(16);
+				String alrline_class = rs.getString(17);
+				String dep_place = rs.getString(18);
+				String des_place = rs.getString(19);
 
 				// 입국항공편
-				String flight_num1 = rs.getString(19);
-				String dep_date1 = rs.getString(20);
-				String dep_time1 = rs.getString(21);
-				String des_date1 = rs.getString(22);
-				String des_time1 = rs.getString(23);
-				String flight_time1 = rs.getString(24);
-				String airline1 = rs.getString(25);
-				String alrline_class1 = rs.getString(26);
-				String dep_place1 = rs.getString(27);
-				String des_place1 = rs.getString(28);
+				String flight_num1 = rs.getString(20);
+				String dep_date1 = rs.getString(21);
+				String dep_time1 = rs.getString(22);
+				String des_date1 = rs.getString(23);
+				String des_time1 = rs.getString(24);
+				String flight_time1 = rs.getString(25);
+				String airline1 = rs.getString(26);
+				String alrline_class1 = rs.getString(27);
+				String dep_place1 = rs.getString(28);
+				String des_place1 = rs.getString(29);
 
 				// 호텔예약
-				String ht_key = rs.getString(29);
-				String ht_name = rs.getString(30);
-				String ht_ad = rs.getString(31);
-				String room_type = rs.getString(32);
-				String check_time = rs.getString(33);
-				String amenities = rs.getString(34);
-				String ht_offers = rs.getString(35);
+				String ht_key = rs.getString(30);
+				String ht_name = rs.getString(31);
+				String ht_ad = rs.getString(32);
+				String room_type = rs.getString(33);
+				String check_time = rs.getString(34);
+				String amenities = rs.getString(35);
+				String ht_offers = rs.getString(36);
 					
-				pk = new package_info(pk_num,pk_name,schedule,Departure,Destination,Price,trv_place,hotel_number,flight_num,dep_date,dep_time,des_date,des_time,flight_time,airline,alrline_class,dep_place,des_place,flight_num1,dep_date1,dep_time1,des_date1,des_time1,flight_time1,airline1,alrline_class1,dep_place1,des_place1,ht_key,ht_name,ht_ad,room_type,check_time,amenities,ht_offers);
+				pk = new package_info(pk_num,pk_name,schedule,Departure,Destination,Price,trv_place,hotel_number,pk_imgfile,flight_num,dep_date,dep_time,des_date,des_time,flight_time,airline,alrline_class,dep_place,des_place,flight_num1,dep_date1,dep_time1,des_date1,des_time1,flight_time1,airline1,alrline_class1,dep_place1,des_place1,ht_key,ht_name,ht_ad,room_type,check_time,amenities,ht_offers);
 			}	
 				
 			rs.close();

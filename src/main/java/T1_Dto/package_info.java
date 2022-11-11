@@ -10,6 +10,7 @@ public class package_info {
 	int Price;
 	String trv_place;
 	String hotel_number;
+	String pk_imgfile;
 	
 	String flight_num;
 	String dep_date;
@@ -67,6 +68,9 @@ public class package_info {
 	}
 	public String getHotel_number() {
 		return hotel_number;
+	}
+	public String getPk_imgfile() {
+		return pk_imgfile;
 	}
 	public String getFlight_num() {
 		return flight_num;
@@ -173,6 +177,9 @@ public class package_info {
 	public void setHotel_number(String hotel_number) {
 		this.hotel_number = hotel_number;
 	}
+	public void setPk_imgfile(String pk_imgfile) {
+		this.pk_imgfile = pk_imgfile;
+	}
 	public void setFlight_num(String flight_num) {
 		this.flight_num = flight_num;
 	}
@@ -255,12 +262,12 @@ public class package_info {
 		this.ht_offers = ht_offers;
 	}
 	public package_info(String pk_num, String pk_name, String schedule, String departure, String destination, int price,
-			String trv_place, String hotel_number, String flight_num, String dep_date, String dep_time, String des_date,
-			String des_time, String flight_time, String airline, String alrline_class, String dep_place,
-			String des_place, String flight_num1, String dep_date1, String dep_time1, String des_date1,
-			String des_time1, String flight_time1, String airline1, String alrline_class1, String dep_place1,
-			String des_place1, String ht_key, String ht_name, String ht_ad, String room_type, String check_time,
-			String amenities, String ht_offers) {
+			String trv_place, String hotel_number, String pk_imgfile, String flight_num, String dep_date,
+			String dep_time, String des_date, String des_time, String flight_time, String airline, String alrline_class,
+			String dep_place, String des_place, String flight_num1, String dep_date1, String dep_time1,
+			String des_date1, String des_time1, String flight_time1, String airline1, String alrline_class1,
+			String dep_place1, String des_place1, String ht_key, String ht_name, String ht_ad, String room_type,
+			String check_time, String amenities, String ht_offers) {
 		super();
 		this.pk_num = pk_num;
 		this.pk_name = pk_name;
@@ -270,6 +277,7 @@ public class package_info {
 		Price = price;
 		this.trv_place = trv_place;
 		this.hotel_number = hotel_number;
+		this.pk_imgfile = pk_imgfile;
 		this.flight_num = flight_num;
 		this.dep_date = dep_date;
 		this.dep_time = dep_time;
@@ -302,15 +310,15 @@ public class package_info {
 	public String toString() {
 		return "package_info [pk_num=" + pk_num + ", pk_name=" + pk_name + ", schedule=" + schedule + ", Departure="
 				+ Departure + ", Destination=" + Destination + ", Price=" + Price + ", trv_place=" + trv_place
-				+ ", hotel_number=" + hotel_number + ", flight_num=" + flight_num + ", dep_date=" + dep_date
-				+ ", dep_time=" + dep_time + ", des_date=" + des_date + ", des_time=" + des_time + ", flight_time="
-				+ flight_time + ", airline=" + airline + ", alrline_class=" + alrline_class + ", dep_place=" + dep_place
-				+ ", des_place=" + des_place + ", flight_num1=" + flight_num1 + ", dep_date1=" + dep_date1
-				+ ", dep_time1=" + dep_time1 + ", des_date1=" + des_date1 + ", des_time1=" + des_time1
-				+ ", flight_time1=" + flight_time1 + ", airline1=" + airline1 + ", alrline_class1=" + alrline_class1
-				+ ", dep_place1=" + dep_place1 + ", des_place1=" + des_place1 + ", ht_key=" + ht_key + ", ht_name="
-				+ ht_name + ", ht_ad=" + ht_ad + ", room_type=" + room_type + ", check_time=" + check_time
-				+ ", amenities=" + amenities + ", ht_offers=" + ht_offers + "]";
+				+ ", hotel_number=" + hotel_number + ", pk_imgfile=" + pk_imgfile + ", flight_num=" + flight_num
+				+ ", dep_date=" + dep_date + ", dep_time=" + dep_time + ", des_date=" + des_date + ", des_time="
+				+ des_time + ", flight_time=" + flight_time + ", airline=" + airline + ", alrline_class="
+				+ alrline_class + ", dep_place=" + dep_place + ", des_place=" + des_place + ", flight_num1="
+				+ flight_num1 + ", dep_date1=" + dep_date1 + ", dep_time1=" + dep_time1 + ", des_date1=" + des_date1
+				+ ", des_time1=" + des_time1 + ", flight_time1=" + flight_time1 + ", airline1=" + airline1
+				+ ", alrline_class1=" + alrline_class1 + ", dep_place1=" + dep_place1 + ", des_place1=" + des_place1
+				+ ", ht_key=" + ht_key + ", ht_name=" + ht_name + ", ht_ad=" + ht_ad + ", room_type=" + room_type
+				+ ", check_time=" + check_time + ", amenities=" + amenities + ", ht_offers=" + ht_offers + "]";
 	}
 	public package_info(String pk_where_pk_num) {
 		super();

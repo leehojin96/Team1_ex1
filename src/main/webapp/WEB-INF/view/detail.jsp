@@ -51,7 +51,7 @@
 </div>
 
 <div class="detail_head_2">
-
+<img src="<%=path %>/images/<%=tour.getPk_imgfile()%>">
 <table>
 
 <tr>
