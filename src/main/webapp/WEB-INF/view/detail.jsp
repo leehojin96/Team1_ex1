@@ -47,11 +47,11 @@
 <div class="detail_head">
 
 <div class="detail_head_1">
-<img src="https://image.hanatour.com/usr/cms/resize/800_0/2015/11/12/10000/41a9e431-59a7-4473-b45e-dc1553dfc555.jpg">
+<img src="<%=path %>/images/<%=tour.getPk_imgfile()%>">
 </div>
 
 <div class="detail_head_2">
-<img src="<%=path %>/images/<%=tour.getPk_imgfile()%>">
+
 <table>
 
 <tr>
