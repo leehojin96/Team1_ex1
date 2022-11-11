@@ -6,8 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
-import T1_Dto.Res;
+import T1_Dto.ResCustomer;
 
 public class ResDao {
 	// db작업 
@@ -34,8 +33,8 @@ public class ResDao {
 			
 		}
 		
-		public ArrayList<Res> res(String login_pay_code){
-			ArrayList<Res> list = new ArrayList<>();
+		public ArrayList<ResCustomer> res(String login_pay_code){
+			ArrayList<ResCustomer> list = new ArrayList<>();
 			dbCon();
 			String sql = "select * from res_info where pay_code=?";
 			
@@ -53,7 +52,7 @@ public class ResDao {
 					int birth = rs.getInt(5);
 					String phone = rs.getString(6);
 					String gender = rs.getString(7);
-					Res res = new Res(res_code,pay_code,name,eng_name,birth,phone,gender);
+					ResCustomer res = new ResCustomer(res_code,pay_code,name,eng_name,birth,phone,gender);
 					list.add(res);
 					
 				}

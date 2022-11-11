@@ -1,9 +1,9 @@
+<%@page import="T1_Dto.ResCustomer"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="T1_Dto.Pay" %>
 <%@ page import="T1_Dto.Customer" %>
-<%@page import="T1_Dao.PackageDao"%>
 <%@page import="T1_Dao.PkDao"%>
 <%@page import="T1_Dao.ResDao"%>
 <%@ page import="T1_Dto.Res" %>
@@ -130,7 +130,7 @@ Package pk = pkdao.package_where_pk_num(pay.getPk_num());
 
 <%
 ResDao resdao = new ResDao();
-ArrayList<Res> reslist = resdao.res(pay.getPay_code());
+ArrayList<ResCustomer> reslist = resdao.res(pay.getPay_code());
 %>
 
 <table>
@@ -146,7 +146,7 @@ ArrayList<Res> reslist = resdao.res(pay.getPay_code());
 
 </table>
 <%
-for(Res res : reslist){
+for(ResCustomer res : reslist){
  %>
 <table>
 <tr>

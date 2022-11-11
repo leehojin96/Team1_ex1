@@ -6,7 +6,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import T1_Dao.ResDao;
-import T1_Dto.Res;
+import T1_Dto.ResCustomer;
 
 public class ResService {
 	ResDao resdao;
@@ -22,10 +22,10 @@ public class ResService {
 	}
 	
 	public String getResList(String pay_code) {
-		ArrayList<Res> reslist = resdao.res(pay_code);
+		ArrayList<ResCustomer> reslist = resdao.res(pay_code);
 		JSONArray list = new JSONArray();
 		
-		for(Res res : reslist) {
+		for(ResCustomer res : reslist) {
 			JSONObject json = new JSONObject();
 			json.put("res_code", res.getRes_code());
 			json.put("pay_code", res.getPay_code());
