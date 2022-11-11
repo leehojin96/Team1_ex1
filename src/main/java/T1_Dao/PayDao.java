@@ -85,15 +85,12 @@ public class PayDao {
 			e.printStackTrace();
 		}
 		
-		
 		return seq;
 		
 	}
 	public String insert(Pay pay) {
 		
-		
 		String pay_seq = pay_seq();
-		
 		
 		System.out.print("seq2"+pay_seq);
 		

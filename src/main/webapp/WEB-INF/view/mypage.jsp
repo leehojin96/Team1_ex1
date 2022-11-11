@@ -78,7 +78,7 @@ AcornTourMypage
 </header>
 
 <section>
-<table>
+<table class="customer_info">
 <caption>회원 정보</caption>
 <tr>
 <td>이름</td>
@@ -99,14 +99,6 @@ AcornTourMypage
 
 </table>
 <table>
-<caption>결제내역</caption>
-<tr>
-<td>결제코드</td>
-<td>아이디(이메일)</td>
-<td>패키지명</td>
-<td>결제금액</td>
-<td>인원</td>
-</tr>
 
 </table>
 <%
@@ -116,6 +108,14 @@ PkDao pkdao = new PkDao();
 Package pk = pkdao.package_where_pk_num(pay.getPk_num());
 %>
 <table>
+<caption>결제내역</caption>
+<tr>
+<td>결제코드</td>
+<td>아이디(이메일)</td>
+<td>패키지명</td>
+<td>결제금액</td>
+<td>인원</td>
+</tr>
 <tr>
 <td> <%= pay.getPay_code()%></td>
 <td> <%= pay.getId() %></td>
@@ -134,7 +134,6 @@ ArrayList<ResCustomer> reslist = resdao.res(pay.getPay_code());
 
 <table>
 <tr>
-<td>결제 코드</td>
 <td>예약 코드</td>
 <td>성명</td>
 <td>영문 성명</td>
@@ -149,7 +148,6 @@ for(ResCustomer res : reslist){
  %>
 <table>
 <tr>
-<td><%=res.getPay_code() %></td>
 <td><%=res.getRes_code() %></td>
 <td><%=res.getName() %></td>
 <td><%=res.getEng_name() %></td>

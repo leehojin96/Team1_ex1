@@ -5,6 +5,10 @@ table{
 	border-collapse: collapse;
 }
 
+.customer_info{
+	margin-bottom: 20px;
+}
+
 caption{
 	font-size : 25px;
 	font-weight: bold;
@@ -21,8 +25,6 @@ td{
 tr:nth-child(1) {
 	font-weight: bold;
 }
-
-
 
 header{
 	font-weight: bold;

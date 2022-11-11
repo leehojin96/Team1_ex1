@@ -22,10 +22,10 @@ public class PackageDetailServlet extends HttpServlet{
 		
 		String pk_num  = request.getParameter("pk_num");
 		
-		 response.setCharacterEncoding("UTF-8");	
-		 response.setContentType("text/plain;charset=utf-8");
+		response.setCharacterEncoding("UTF-8");	
+		response.setContentType("text/plain;charset=utf-8");
 		
-	  	 PkDao pkdao = new PkDao();
+	  	PkDao pkdao = new PkDao();
 	  	package_info info = pkdao.pk(pk_num); 
 		
 		//PkListService service = new PkListService(); // <==패키지목록다오(sql불러오기전)에 꼭 붙여넣기
