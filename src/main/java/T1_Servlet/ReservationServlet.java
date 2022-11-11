@@ -52,9 +52,11 @@ public class ReservationServlet extends HttpServlet {
 		System.out.print(persons);
 		
 		Pay pay = new Pay(id, pk_num, Integer.valueOf(price), Integer.valueOf(persons));
+		System.out.print(pay);
 		PayDao paydao = new PayDao();
 		String pay_seq = paydao.insert(pay);
 		
+		System.out.print(pay_seq);
 		
 		String[] names = request.getParameterValues("name");
 		String[] eng_names = request.getParameterValues("eng_name");

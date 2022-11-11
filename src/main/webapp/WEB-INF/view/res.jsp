@@ -80,14 +80,7 @@ function test(obj){
 
 <body>
 
-	<%
-	String price = (String) request.getAttribute("price");
-	String pk_num = (String) request.getAttribute("pk_num");
 	
-	
-	%>
-<input type="hidden" name="priceh" value="">
-<input type="hidden" name="pk_numh" value="">
 	<%
 	String id = (String) session.getAttribute("id");
 	%>
@@ -123,8 +116,16 @@ function test(obj){
 <section>
 
 <form name="frm" action="reservation" method="post">
-
-<table>
+<%
+	String price = (String) request.getAttribute("price");
+	String pk_num = (String) request.getAttribute("pk_num");
+	
+	
+	%>
+<input type="hidden" name="price_h" value="">
+<input type="hidden" name="pk_num_h" value="">
+<div id="wrap">
+<table table id="res_table">
 <caption><h1>예약자 정보</h1></caption>
 
 	<tr>
@@ -140,22 +141,24 @@ function test(obj){
 		<th>휴대폰번호</th><td><input class = "box" type = "text" name ="phone" Placeholder="ex) 010-7143-7327"></td>
 	</tr>
 	<tr>
-		<th>성별</th>
-		<td>
-		<input type="radio" name = "gender" value ="남">남
-		<input type="radio" name = "gender" value ="여">여
-		</td>
-	</tr>
+					<th>성별</th>
+					<td><select onchange="test(this)" id="gender">
+							<option value="">선택</option>
+							<option value="남">남</option>
+							<option value="여">여</option>
+					</select></td>
+					<td><input type="hidden" value="" id="genders" name="genders"></td>
+				</tr>
 	
 </table>
-
+</div>
 <table>
 	<caption><h3>최종결제금액</h3></caption>
 	
 	<tr>
 		<th>인원</th>
 		<td>
-			<select id="persons" name="persons" onchange="abc(this)">
+			<select id="persons" name="persons" onchange="abc()">
 					<option value="">선택하세요</option>
 					<option value="1">1인</option>
 					<option value="2">2인</option>
@@ -179,7 +182,8 @@ function test(obj){
 	
 	<tr>
 		<th>총 상품금액</th>
-		<td>가격 : <%=price%> 원</td>
+		<td>가격 : <input type="text" id="totalprice" value="<%=price%>">
+						<input type="hidden" id="price" value="<%=price%>"></td>
 	</tr>
 	
 	<tr>	
