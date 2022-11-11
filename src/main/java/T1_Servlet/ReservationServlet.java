@@ -42,9 +42,9 @@ public class ReservationServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		
-		String pk_num  = request.getParameter("pk_num");
-		String price = request.getParameter("price");
-		String persons = request.getParameter("persopns");
+		String pk_num  = request.getParameter("pk_num_h");
+		String price = request.getParameter("price_h");
+		String persons = request.getParameter("persons");
 		
 		System.out.print(id);
 		System.out.print(pk_num);

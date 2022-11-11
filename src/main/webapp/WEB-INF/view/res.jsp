@@ -82,8 +82,12 @@ function test(obj){
 
 	<%
 	String price = (String) request.getAttribute("price");
+	String pk_num = (String) request.getAttribute("pk_num");
+	
+	
 	%>
-
+<input type="hidden" name="priceh" value="">
+<input type="hidden" name="pk_numh" value="">
 	<%
 	String id = (String) session.getAttribute("id");
 	%>
