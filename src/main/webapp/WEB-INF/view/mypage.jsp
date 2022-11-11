@@ -4,6 +4,7 @@
 <%@ page import="T1_Dto.Pay" %>
 <%@ page import="T1_Dto.Customer" %>
 <%@page import="T1_Dao.PackageDao"%>
+<%@page import="T1_Dao.PkDao"%>
 <%@page import="T1_Dao.ResDao"%>
 <%@ page import="T1_Dto.Res" %>
 <%@ page import="T1_Dto.Package" %>
@@ -111,15 +112,15 @@ AcornTourMypage
 </table>
 <%
 ArrayList<Pay> list = (ArrayList<Pay>)request.getAttribute("list");
-PackageDao packagedao = new PackageDao();
+PkDao pkdao = new PkDao();
 	for(Pay pay : list){
-Package pck = packagedao.package_where_pk_num(pay.getPk_num());
+Package pk = pkdao.package_where_pk_num(pay.getPk_num());
 %>
 <table>
 <tr>
 <td> <%= pay.getPay_code()%></td>
 <td> <%= pay.getId() %></td>
-<td> <a href="package_detail?pk_num=<%=pay.getPk_num() %>"><%= pck.getPk_name() %></a></td>
+<td> <a href="package_detail?pk_num=<%=pay.getPk_num() %>"><%= pk.getPk_name() %></a></td>
 <td> <%= pay.getPrice() %></td>
 <td> <%= pay.getPersons() %></td>
 </tr>
@@ -127,11 +128,11 @@ Package pck = packagedao.package_where_pk_num(pay.getPk_num());
 <details>
 <summary>예약자 정보 보기</summary>
 
-
-
-<%ResDao resdao = new ResDao();
+<%
+ResDao resdao = new ResDao();
 ArrayList<Res> reslist = resdao.res(pay.getPay_code());
 %>
+
 <table>
 <tr>
 <td>결제 코드</td>
@@ -165,7 +166,7 @@ for(Res res : reslist){
 
 </section>
 
-	<footer>
+<footer>
 <div class ="divFT">
 <div class ="divF">
 <ul>

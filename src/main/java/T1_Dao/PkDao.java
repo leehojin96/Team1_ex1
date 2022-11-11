@@ -5,7 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
+import T1_Dto.Package;
 import T1_Dto.package_info;
 
 public class PkDao {
@@ -102,6 +105,71 @@ public class PkDao {
 			e.printStackTrace();
 		} 		
 		return pk;
+	}
+	
+	public ArrayList<Package> packagelist(){
+		
+		ArrayList<Package> list = new ArrayList<>();
+		dbCon();
+		String sql = "select * from package_info";
+		try {
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			
+			while(rs.next()) {
+				String pk_num = rs.getString(1);
+				String pk_name = rs.getString(2);
+				String schedule = rs.getString(3);
+				String departure = rs.getString(4);
+				String destination = rs.getString(5);
+				int price = rs.getInt(6);
+				String trv_place = rs.getString(7);
+				String hotel_number = rs.getString(8);
+				
+				Package pack_age = new Package(pk_num,pk_name,schedule,departure,destination,price,trv_place,hotel_number);
+				list.add(pack_age);
+			}
+			
+			rs.close();
+			st.close();
+			con.close();
+			
+		} catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public Package package_where_pk_num(String input_pk_num){
+		
+		dbCon();
+		Package package1=null;
+		String sql = "select * from package_info where pk_num=?";
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, input_pk_num);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				String pk_name = rs.getString(2);
+				String schedule = rs.getString(3);
+				String departure = rs.getString(4);
+				String destination = rs.getString(5);
+				int price = rs.getInt(6);
+				String trv_place = rs.getString(7);
+				String ht_key = rs.getString(8);
+				
+				package1 = new Package(input_pk_num, pk_name, schedule, departure, destination, price, trv_place, ht_key);
+			}
+			
+			rs.close();
+			pst.close();
+			con.close();
+			
+		} catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return package1;
 	}
 	
 	// 테스트용 메인입니다.
