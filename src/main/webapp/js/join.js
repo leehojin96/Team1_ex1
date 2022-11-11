@@ -33,6 +33,7 @@ function join(){
 		alert("성별을 선택해주세요.");
 		gender.focus();
 	}else{
+		alert("가입이 완료되었습니다.");
 		frm.submit();
 	}
 }

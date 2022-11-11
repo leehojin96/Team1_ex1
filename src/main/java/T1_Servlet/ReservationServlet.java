@@ -1,4 +1,4 @@
-package T1_BinResServlet;
+package T1_Servlet;
 
 import java.io.IOException;
 
@@ -7,6 +7,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import T1_Dao.ResCustomerDao;
+import T1_Dto.ResCustomer;
+import T1_Service.ResCustomerService;
 
 @WebServlet("/reservation")
 public class ReservationServlet extends HttpServlet {

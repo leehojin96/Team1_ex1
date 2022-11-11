@@ -1,4 +1,4 @@
-package T1_BinResServlet;
+package T1_Dto;
 
 public class ResCustomer {
 

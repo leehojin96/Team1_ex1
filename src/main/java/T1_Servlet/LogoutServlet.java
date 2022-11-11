@@ -18,11 +18,11 @@ public class LogoutServlet extends HttpServlet{
 		HttpSession session = request.getSession();
 		session.setAttribute("id", null);
 		session.setMaxInactiveInterval(0);
-		request.getRequestDispatcher("mainIndex").forward(request, response);
+		request.getRequestDispatcher("package_list").forward(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		request.getRequestDispatcher("package_list").forward(request, response);
 	}
 }

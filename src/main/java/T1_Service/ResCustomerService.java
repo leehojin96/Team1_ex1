@@ -1,4 +1,7 @@
-package T1_BinResServlet;
+package T1_Service;
+
+import T1_Dao.ResCustomerDao;
+import T1_Dto.ResCustomer;
 
 public class ResCustomerService {
 	
