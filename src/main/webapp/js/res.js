@@ -51,5 +51,4 @@ function check(){
 		frm.submit();
 	}
 	
-	frm.submit();
 }
