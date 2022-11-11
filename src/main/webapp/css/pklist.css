@@ -3,8 +3,9 @@
 .detail{
  display:none;
  height: 100px;
- border-style:solid 0.5px black ;
- background-color: white;
+ width: 95%;
+ font-size:small;
+ border-style: ridge;
 
  }
  a{
@@ -12,8 +13,87 @@
  }
  ul{
  list-style: none;
- border-top: 0.5px solid black;
+ border-top: 0.5px solid rgb(192, 192, 192);
  }
+ 
+.wrap ul{
+	 background-color: #f5f5f5;
+}
+header{
+	font-weight: bold;
+    background-color: #bec6bb;
+    font-size: 30px;
+    color: white;
+}
+.h_wrap{
+	width: 90%;
+	display: flex;
+	text-align : center;
+}
+
+.title{
+	margin-left: 40px;
+	font-size : 30px;
+	color: white;
+}
+.nav{
+	padding-right: 10px;
+	font-size : 15px;
+	position: absolute;
+	right : 300px;
+	top: 20px;
+}
+h2{
+	margin-top : 0px;
+	margin:0px;
+	font-family: fantasy;
+}
+h3 {
+	margin-left: 290px;
+	margin-top: 0px;
+	margin-bottom:0px;
+	font-family: fantasy;
+}
+
+.wrap{
+     width: 800px;
+     padding:0px;
+     padding-top:5px;
+     margin:0px auto; 
+     color:black;   
+}
+
+img{
+ 	height: 200px;
+ 	width: 200px;
+ 	box-shadow: 1px 2px 2px 1px black ;
+ }
+ p {
+ 	padding-left: 15px;
+ 	display: inline-block;
+ 	font-style: normal;
+ 	color : black;
+ }
+ .pk{
+ font-family: fantasy;
+ font-size: 13px;
+ }
+button{
+  border: 0;
+  padding-left: 30px;
+  border-radius: 10px;
+  padding: 15px 25px;
+  display: inline-block;
+  text-align: center;
+  background-color: #c0c0c0;
+  color: white; 
+}
+button:hover{
+  background-color:#d6d6eb;
+  color:#666666;
+}
+
+
 
 header{
 	font-weight: bold;
@@ -39,42 +119,16 @@ header{
 	right : 300px;
 	top: 20px;
 }
-.id{
-	font-size : 15px;
-}
-.wrap{
-     width: 1000px;
-     padding:0px;
-     margin:0px auto; 
-     color:black;   
-}
+ 
+ section{
+ margin: auto;
+ width: 1200px;
+ padding : auto;
 
-img{
- 	height: 200px;
- 	width: 200px;
+ 
  }
- p {
- 	padding-left: 15px;
- 	display: inline-block;
- 	font-style: normal;
- }
- .pk{
- font-family: 'Nanum Myeongjo', serif;
- font-size: 13px;
- }
-button{
-  border: 0;
-  padding: 15px 25px;
-  display: inline-block;
-  text-align: center;
-  color:gray;
-}
-#btn_p{
-	padding-right: 10px; 
-}
-
-
-.footer_wrap{
+ 
+ .footer_wrap{
  border-top: 1px solid black;
  
  }
@@ -118,4 +172,3 @@ button{
  .footer2 span{
  color : gray;
  }
- 

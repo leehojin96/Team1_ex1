@@ -73,7 +73,7 @@ public class ReservationServlet extends HttpServlet {
 			String birth = births[i];
 			String phone = phones[i];
 			String gender = genders[i];
-			s
+			
 			ResCustomer res = new ResCustomer(pay_seq, name, eng_name, Integer.valueOf(birth), phone, gender);
 			System.out.print(res);
 			ResCustomerDao dao = new ResCustomerDao();
