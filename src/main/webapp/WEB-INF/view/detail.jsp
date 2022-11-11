@@ -72,7 +72,7 @@
 
 <p>패키지번호 : <%=tour.getPk_num()%></p>
 
-<button onclick="location.href='reservation'">지금당장 예약하기</button> 
+<button onclick="location.href='reservation?price=<%= tour.getPrice()%>'">지금당장 예약하기</button> 
 
 </div>
 </div>

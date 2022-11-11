@@ -24,6 +24,15 @@ public class ResCustomer {
 		this.gender = gender;
 	}
 
+	public ResCustomer(String name, String eng_name, int birth, String phone, String gender) {
+		super();
+		this.name = name;
+		this.eng_name = eng_name;
+		this.birth = birth;
+		this.phone = phone;
+		this.gender = gender;
+	}
+
 	public String getRes_code() {
 		return res_code;
 	}
