@@ -13,6 +13,7 @@
 </head>
 
 <link rel="styLesheet" href="<%=path%>/css/header_footer.css">
+<link rel="styLesheet" href="<%=path%>/css/login.css">
 <body>
  <%
     String id = (String)session.getAttribute("id");
@@ -54,7 +55,7 @@ AcornTourLogin
 <tr>
 <td colspan="2">
 <button type="button" onclick="login()">로그인</button>
-<button type="button" onclick="location.href='mainIndex'">메인화면</button>
+
 </td>
 </tr>
 </table>

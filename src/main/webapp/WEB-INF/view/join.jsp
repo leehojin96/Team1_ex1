@@ -63,7 +63,7 @@ AcornTourJoin
 <tr >
 <td colspan="2">
 <button type="button" onclick="join()">가입하기</button>
-<button type="button" onclick="location.href='mainIndex'">가입취소</button>
+
 </td>
 </tr>
 

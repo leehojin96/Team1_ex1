@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet{
 			
 		  HttpSession  session= 	request.getSession();
 		  session.setAttribute("id", id);
-            request.getRequestDispatcher("mainIndex").forward(request, response);
+            request.getRequestDispatcher("package_list").forward(request, response);
             
          } else if (result == 0){
             PrintWriter script = response.getWriter();
