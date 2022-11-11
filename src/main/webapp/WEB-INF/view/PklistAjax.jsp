@@ -155,7 +155,7 @@ function toggle(obj){
 </ul>
 
 <ul>
-<li><a href="tourPackageInfo?pk_num=PA987"><p><img src="https://image.hanatour.com/usr/cms/resize/400_0/2019/01/24/10000/483f20ed-6f50-4f32-be96-06208321a7ff.jpg"></p>
+<li><a href="package_detail?pk_num=PA987"><p><img src="https://image.hanatour.com/usr/cms/resize/400_0/2019/01/24/10000/483f20ed-6f50-4f32-be96-06208321a7ff.jpg"></p>
 <p class="pk">[마감임박!!] 로스앤젤레스 관광<br>12월 10일부터 12월 17일일까지 미주여행 고민중이라면! [슈퍼세이브] 가족단위 추천 상품<br> 여행기간 8일<br>평점 ★4.5</p></a>
 <button  onclick="toggle(this)">상품요약보기</button>
 	
