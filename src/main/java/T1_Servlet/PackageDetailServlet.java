@@ -33,6 +33,7 @@ public class PackageDetailServlet extends HttpServlet{
 
 	  
 		request.setAttribute("info", info);
+		request.setAttribute("pk_num", pk_num);
 		request.getRequestDispatcher("/WEB-INF/view/detail.jsp").forward(request, response);
 }
 }

@@ -66,16 +66,37 @@ public class PayDao {
 		}
 		return list;
 	}
-	
-	public void insert(Pay pay) {
+	public String pay_seq() {
 		dbCon();
-		String sql="insert into pay_info values(pay_seq.nextval,?,?,?,?)";
+		String seq  ="select    pay_seq.nextval   from  dual";
+		try {
+			PreparedStatement pst = con.prepareStatement(seq);
+			pst.executeQuery();
+			
+			pst.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return seq;
+		
+	}
+	public String insert(Pay pay) {
+		dbCon();
+		
+		String pay_seq = pay_seq();
+		
+		
+		String sql="insert into pay_info values(?,?,?,?,?)";
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);
-			pst.setString(1, pay.getId());
-			pst.setString(2, pay.getPk_num());
-			pst.setInt(3, pay.getPrice());
-			pst.setInt(4, pay.getPersons());
+			pst.setString(1, pay_seq);
+			pst.setString(2, pay.getId());
+			pst.setString(3, pay.getPk_num());
+			pst.setInt(4, pay.getPrice());
+			pst.setInt(5, pay.getPersons());
 			pst.executeUpdate();
 			
 			pst.close();
@@ -84,5 +105,6 @@ public class PayDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return pay_seq;
 	}
 }

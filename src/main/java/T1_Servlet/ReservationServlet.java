@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import T1_Dao.PayDao;
 import T1_Dao.ResCustomerDao;
+import T1_Dto.Pay;
 import T1_Dto.ResCustomer;
 import T1_Service.ResCustomerService;
 
@@ -20,23 +22,35 @@ public class ReservationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String price = request.getParameter("price");
+		String pk_num  = request.getParameter("pk_num");
+		
 		System.out.println( "price=" + price);
+		
 		request.setAttribute("price", price);
+		request.setAttribute("pk_num", pk_num);
+		
 		request.getRequestDispatcher("WEB-INF/view/res.jsp").forward(request, response);
 		System.out.println("가져와요");
 	}
 	
 	
-	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		System.out.println("가져와요2");
 		
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
-		  session.setAttribute("id", id);
 		
-		System.out.println("가져와요2");
+		String pk_num  = request.getParameter("pk_num");
+		String price = request.getParameter("price");
+		String persons = request.getParameter("persopns");
+		
+		
+		Pay pay = new Pay(id, pk_num, Integer.valueOf(price), Integer.valueOf(persons));
+		PayDao paydao = new PayDao();
+		String pay_seq = paydao.insert(pay);
+		
 		
 		String[] names = request.getParameterValues("name");
 		String[] eng_names = request.getParameterValues("eng_name");
@@ -44,8 +58,6 @@ public class ReservationServlet extends HttpServlet {
 		String[] phones = request.getParameterValues("phone");
 		String[] genders = request.getParameterValues("genders");
 		
-		/*
-		*/
 		for(int i=0; i < names.length ;i++) {
 			
 			String name = names[i];
@@ -54,10 +66,10 @@ public class ReservationServlet extends HttpServlet {
 			String phone = phones[i];
 			String gender = genders[i];
 			
+			ResCustomer res = new ResCustomer(pay_seq, name, eng_name, Integer.valueOf(birth), phone, gender);
 			ResCustomerDao dao = new ResCustomerDao();
-			ResCustomer rescustomer = new ResCustomer(name,eng_name, Integer.valueOf(birth), phone,gender);		
 			ResCustomerService service = new ResCustomerService(dao);		
-			service.insert(rescustomer);
+			service.insert(res);
 			
 			System.out.print(name);
 			System.out.print(eng_name);
