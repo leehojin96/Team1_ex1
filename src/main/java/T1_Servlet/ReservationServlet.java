@@ -53,6 +53,8 @@ public class ReservationServlet extends HttpServlet {
 		
 		Pay pay = new Pay(id, pk_num, Integer.valueOf(price), Integer.valueOf(persons));
 		System.out.print(pay);
+		
+		
 		PayDao paydao = new PayDao();
 		String pay_seq = paydao.insert(pay);
 		
@@ -71,8 +73,9 @@ public class ReservationServlet extends HttpServlet {
 			String birth = births[i];
 			String phone = phones[i];
 			String gender = genders[i];
-			
+			s
 			ResCustomer res = new ResCustomer(pay_seq, name, eng_name, Integer.valueOf(birth), phone, gender);
+			System.out.print(res);
 			ResCustomerDao dao = new ResCustomerDao();
 			ResCustomerService service = new ResCustomerService(dao);		
 			service.insert(res);

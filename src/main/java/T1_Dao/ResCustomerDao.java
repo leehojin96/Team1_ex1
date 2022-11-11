@@ -35,16 +35,17 @@ public class ResCustomerDao {
 	
 	public void insert(ResCustomer customer) {
 		dbCon();
-		String sql = "insert into res_info values(  res_seq.nextval ,1000,?,?,?,?,?)";
+		String sql = "insert into res_info values(  res_seq.nextval ,?,?,?,?,?,?)";
 		PreparedStatement pst;
 		try {
 			pst = con.prepareStatement(sql);		 
 			//pst.setString(1, customer.getPay_code());
-			pst.setString(1, customer.getName());
-			pst.setString(2, customer.getEng_name());
-			pst.setInt(3, customer.getBirth());
-			pst.setString(4, customer.getPhone());
-			pst.setString(5, customer.getGender());
+			pst.setString(1, customer.getPay_code());
+			pst.setString(2, customer.getName());
+			pst.setString(3, customer.getEng_name());
+			pst.setInt(4,customer.getBirth());
+			pst.setString(5, customer.getPhone());
+			pst.setString(6, customer.getGender());
 			pst.executeUpdate();
 			
 			pst.close();

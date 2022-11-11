@@ -14,7 +14,6 @@ public class ResCustomer {
 	}
 
 	public ResCustomer(String res_code, String pay_code, String name, String eng_name, int birth, String phone,String gender) {
-		super();
 		this.res_code = res_code;
 		this.pay_code = pay_code;
 		this.name = name;
@@ -25,7 +24,6 @@ public class ResCustomer {
 	}
 
 	public ResCustomer(String name, String eng_name, int birth, String phone, String gender) {
-		super();
 		this.name = name;
 		this.eng_name = eng_name;
 		this.birth = birth;
@@ -34,7 +32,6 @@ public class ResCustomer {
 	}
 
 	public ResCustomer(String pay_code, String name, String eng_name, int birth, String phone, String gender) {
-		super();
 		this.pay_code = pay_code;
 		this.name = name;
 		this.eng_name = eng_name;

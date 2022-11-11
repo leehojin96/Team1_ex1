@@ -68,10 +68,16 @@ public class PayDao {
 	}
 	public String pay_seq() {
 		dbCon();
-		String seq  ="select    pay_seq.nextval   from  dual";
+		String sql  ="select pay_seq.nextval  from  dual";
+		String seq = null;
 		try {
-			PreparedStatement pst = con.prepareStatement(seq);
-			pst.executeQuery();
+			PreparedStatement pst = con.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				seq = rs.getString(1);
+				System.out.print("seq1"+seq);
+			}
 			
 			pst.close();
 			con.close();
@@ -84,11 +90,14 @@ public class PayDao {
 		
 	}
 	public String insert(Pay pay) {
-		dbCon();
+		
 		
 		String pay_seq = pay_seq();
 		
 		
+		System.out.print("seq2"+pay_seq);
+		
+		dbCon();
 		String sql="insert into pay_info values(?,?,?,?,?)";
 		try {
 			PreparedStatement pst = con.prepareStatement(sql);

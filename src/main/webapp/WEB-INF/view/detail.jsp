@@ -9,7 +9,8 @@
 
 <%String path = request.getContextPath();%>
 <link rel="styLesheet" href="<%=path%>/css/detail.css">
-<%package_info tour = (package_info)request.getAttribute("info");%>
+<%package_info tour = (package_info)request.getAttribute("info");
+String pk_num= (String)request.getAttribute("pk_num");%>
 
 </head>
 <body>
@@ -72,7 +73,7 @@
 
 <p>패키지번호 : <%=tour.getPk_num()%></p>
 
-<button onclick="location.href='reservation?price=<%= tour.getPrice()%>'">지금당장 예약하기</button> 
+<button onclick="location.href='reservation?price=<%= tour.getPrice()%>&&pk_num=<%=pk_num%>'">지금당장 예약하기</button> 
 
 </div>
 </div>

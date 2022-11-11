@@ -33,14 +33,7 @@ public class CustomerDao {
 		}
 		System.out.print("연결성공");
 		
-		String sql = "select * from cus_info";
-		PreparedStatement pst;
-		try {
-			pst = con.prepareStatement(sql);
-			ResultSet rs = pst.executeQuery();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		
 		
 	}
 

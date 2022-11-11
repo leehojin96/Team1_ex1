@@ -122,8 +122,8 @@ function test(obj){
 	
 	
 	%>
-<input type="hidden" name="price_h" value="">
-<input type="hidden" name="pk_num_h" value="">
+<input type="hidden" name="price_h" value="<%= price%>">
+<input type="hidden" name="pk_num_h" value="<%=pk_num%>">
 <div id="wrap">
 <table table id="res_table">
 <caption><h1>예약자 정보</h1></caption>
