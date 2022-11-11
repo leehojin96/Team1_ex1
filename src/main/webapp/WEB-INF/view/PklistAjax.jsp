@@ -140,13 +140,13 @@ function toggle(obj){
 		 
 		 <div id="info">
 		     힐링+휴양 / 세이브투어
-		     <input type="text"  id="pk_name" >	<br>
+		     <input type="text"  id="pk_name" readonly>	<br>
 		     투어도시	
-		     <input type="text"  id="trv_place" ><br>
+		     <input type="text"  id="trv_place" readonly><br>
 		     가격(원)		
-		     <input type="text"  id="price" ><br>
+		     <input type="text"  id="price" readonly><br>
 		     일정	
-		     <input type="text"  id="schedule" ><br>	
+		     <input type="text"  id="schedule" readonly><br>	
 		  </div>
  
 	</div>
@@ -165,13 +165,13 @@ function toggle(obj){
 		 
 		 <div id="info">
 		     관광+쇼핑 / 얼리버드 
-		     <input type="text"  id="pk_name" ><br>
+		     <input type="text"  id="pk_name" readonly><br>
 		     투어도시		
-		     <input type="text"  id="trv_place" ><br>	
+		     <input type="text"  id="trv_place" readonly><br>	
 		     가격(원)	
-		     <input type="text"  id="price" ><br>	
+		     <input type="text"  id="price" readonly><br>	
 		     일정
-		     <input type="text"  id="schedule" ><br>		     
+		     <input type="text"  id="schedule" readonly><br>		     
 		  </div>
 
 	</div>
@@ -190,13 +190,13 @@ function toggle(obj){
 		 
 		 <div id="info">
 		     레저+투어포함 / 인기투어
-		     <input type="text"  id="pk_name" ><br>
+		     <input type="text"  id="pk_name" readonly><br>
 		     투어도시		
-		     <input type="text"  id="trv_place" ><br>	
+		     <input type="text"  id="trv_place" readonly><br>	
 		     가격(원)	
-		     <input type="text"  id="price" ><br>	
+		     <input type="text"  id="price" readonly><br>	
 		     일정
-		     <input type="text"  id="schedule" ><br>			     
+		     <input type="text"  id="schedule" readonly><br>			     
 		  </div>
 	
     </div>
@@ -212,13 +212,13 @@ function toggle(obj){
 	
        <input type="hidden" value="0">
 		   힐링+휴양 / 얼리버드
-		     <input type="text"  id="pk_name" ><br>
+		     <input type="text"  id="pk_name" readonly><br>
 		     투어도시		
-		     <input type="text"  id="trv_place" ><br>	
+		     <input type="text"  id="trv_place" readonly><br>	
 		     가격(원)	
-		     <input type="text"  id="price" ><br>	
+		     <input type="text"  id="price" readonly><br>	
 		     일정
-		     <input type="text"  id="schedule" ><br>		
+		     <input type="text"  id="schedule" readonly><br>		
 
 
 	</div>
