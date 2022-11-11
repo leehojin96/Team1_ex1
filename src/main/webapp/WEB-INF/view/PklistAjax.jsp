@@ -35,14 +35,14 @@ let noTag  = li.querySelector("#no");
 let no =  noTag.value;
 
 
-alert("no ; " +  no);
+// alert("no ; " +  no);
 $.ajax(
 		{
-			 type:"get",
-			 dataType:"json",
-			 data:{ no : no} ,
-			 url:"/Team1_ex1/package_list.do",	    
-			 success: function( data, textStatus){
+			type:"get",
+			dataType:"json",
+			data:{ no : no} ,
+			url:"/Team1_ex1/package_list.do",	    
+			success: function( data, textStatus){
 		        console.log( data);	  //콘솔에서 json 데이터 확인하기 			        
 		        let pk_name = data.pk_name;
 		        let trv_place = data.trv_place;
@@ -59,16 +59,15 @@ $.ajax(
 		        trv_placeTag.value=trv_place;
 		        priceTag.value= price;
 		        scheduleTag.value =schedule;
-		      
-			 }
-			 ,
-			 error: function( data, textStatus){			 
-			 },		 
-			 complete:function(data, textStatus){
-				 alert("여행을 떠나요");
-			 }	 
 		}
-	 );
+			,
+			error: function( data, textStatus){			 
+			},		 
+			complete:function(data, textStatus){
+				alert("여행을 떠나요");
+			 	}
+			}
+	 	);
 }
 </script>
 
@@ -136,9 +135,8 @@ function toggle(obj){
 <p class="pk">[슈퍼세이브] 행복한 오사카여행<br> 12월 20일부터 12월 23일까지 [로칸1일숙박]일상의 바쁜 당신을 위한  힐링 추천 상품!<br>여행기간 2박3일<br>평점 ★4.2</p></a>
 <button onclick="toggle(this)">상품요약보기</button>
 	
-	<div  class="detail">
-	
-			<input id="flag" type="hidden" value="0">
+	<div class="detail">
+		<input id="flag" type="hidden" value="0">
 		<input id="no" type="hidden"  value="Pj123"/>	 
 		 
 		 <div id="info">
