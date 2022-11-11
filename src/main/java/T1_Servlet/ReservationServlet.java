@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import T1_Dao.ResCustomerDao;
 import T1_Dto.ResCustomer;
@@ -30,6 +31,10 @@ public class ReservationServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
+		  session.setAttribute("id", id);
 		
 		System.out.println("가져와요2");
 		
